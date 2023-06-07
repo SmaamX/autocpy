@@ -1,4 +1,4 @@
-#AUTO and BYPASS
+#auto clicker but unrecognizable 90%
 try:
     import pyautogui
 except ModuleNotFoundError:

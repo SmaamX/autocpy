@@ -1,4 +1,4 @@
-#auto clicker but unrecognizable 90%
+#AUTO and BYPASS
 try:
     import pyautogui
 except ModuleNotFoundError:
@@ -25,14 +25,23 @@ def grandom(x,y,z,a):
     return r
 
 try:
+    h = 0
     while True:
         while ip('v'): #Your hotkey for start
-            p = ri(1,20)
+            p = ri(1,22)
             if p == 1:
                 coold = grandom(2,3,4,5)
                 coold = coold * 10 ** -1
                 sl(coold)
-            a = grandom(23,91,92,192)
+            a = grandom(21,90,91,189)
+            g = grandom(12,29,30,101)
+            if a > h and not a-g <= 0:
+                a = a-g
+            elif a-g <= 0:
+                a = g-a
+            else:
+                a = a+g
+            h = a
             a = a * 10 ** -3
             sl(a)
             pyautogui.leftClick()

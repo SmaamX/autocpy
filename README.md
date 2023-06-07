@@ -3,7 +3,7 @@ This can silence auto click detector / anti cheat
 ### ToDo ✓
 - [ ] Shake
 - [X] Random CPS
-- [X] Wave 
+- [X] Wave CPS
 - [ ] GUI
 - [ ] Logo
 # Pay attention

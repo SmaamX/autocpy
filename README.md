@@ -5,4 +5,4 @@ This can silence auto click detector / anti cheat
 - [X] Random CPS
 - [ ] Wave like CPS
 # pay attention
-I will not accept any responsibility for your accounts being banned, if you point a finger at me for this, I will laugh.
+I will not accept any responsibility for your accounts being banned, if you point your finger at me for this, I will laugh.

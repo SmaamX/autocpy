@@ -4,6 +4,7 @@ try:
 except ModuleNotFoundError:
     print ('pip install pyautogui')
 try:
+    import keyboard
     from keyboard import is_pressed as ip
 except ModuleNotFoundError:
     print ('pip install keyboard')

@@ -1,4 +1,4 @@
-#CPS FUCKER BY SMAAMX
+#AutoClicker (unrecognizable)
 try:
     import pyautogui
 except ModuleNotFoundError:

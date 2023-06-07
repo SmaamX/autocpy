@@ -1,5 +1,5 @@
 # AutoPy
-This Python script can silence auto click detector / anti cheat
+a Python script for silence auto click detector / anti cheat
 ### ToDo ✓
 - [ ] Shake
 - [X] Random CPS

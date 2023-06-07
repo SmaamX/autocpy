@@ -46,7 +46,7 @@ try:
             sl(a)
             pyautogui.leftClick()
         if ip('y'): #Your hotkey for stop
-            print ('exit')
+            print ('Stop')
             break
 except KeyboardInterrupt:
-    print ('Force exit')
+    print ('Force stop')

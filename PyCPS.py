@@ -9,7 +9,7 @@ except ModuleNotFoundError:
     print ('pip install keyboard')
 from time import sleep as sl
 from random import randint as ri
-print('By SmaamX')
+print('Start')
 pyautogui.PAUSE = 0
 
 def grandom(x,y,z,a):

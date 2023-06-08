@@ -50,7 +50,33 @@ try:
     def on_stop_pressed():
         print('Stop')
         exit()
-    keyboard.add_hotkey('v', on_start_pressed)  
+
+    def fixkey (x,y):
+        keyboard.add_hotkey(x +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ x, on_start_pressed)
+
+    def fixkey3 (x,y,z):
+        keyboard.add_hotkey(x +'+'+ y +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(z+'+'+ x +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ z +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ x +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ y +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ z +'+'+ x, on_start_pressed)
+
+    def mkey(x,y,z,a,r):
+        fixkey (x,r)
+        fixkey (y,r)
+        fixkey (a,r)
+        fixkey (z,r)
+        fixkey3 (x,y,r)
+        fixkey3 (x,a,r)
+        fixkey3 (x,z,r)
+        fixkey3 (y,z,r)
+        fixkey3 (y,a,r)
+        fixkey3 (a,z,r)
+
+    mkey('w','a','s','d','r')
+    keyboard.add_hotkey('r', on_start_pressed)
     keyboard.add_hotkey('y', on_stop_pressed)
     keyboard.wait()
 except KeyboardInterrupt:

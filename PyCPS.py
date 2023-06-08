@@ -1,4 +1,5 @@
 #PyCPS Beta
+print ('Loading...')
 try:
     import pyautogui
 except ModuleNotFoundError:
@@ -10,8 +11,8 @@ except ModuleNotFoundError:
     print ('pip install keyboard')
 from time import sleep as sl
 from random import randint as ri
-print('Start')
 pyautogui.PAUSE = 0
+print('Start')
 
 def grandom(x,y,z,a):
     d = ri(1,2)
@@ -63,7 +64,41 @@ try:
         keyboard.add_hotkey(z +'+'+ y +'+'+ x, on_start_pressed)
         keyboard.add_hotkey(y +'+'+ z +'+'+ x, on_start_pressed)
 
-    def mkey(x,y,z,a,r):
+    def fixkey4 (x,y,z,s):
+        keyboard.add_hotkey(x +'+'+ y +'+'+ z +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ y +'+'+ s +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ s +'+'+ y +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ x +'+'+ y +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ x +'+'+ y +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ x +'+'+ s +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ s +'+'+ x +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ z +'+'+ x +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ z +'+'+ y +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ z +'+'+ s +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ s +'+'+ z +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ x +'+'+ z +'+'+ y, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ x +'+'+ z +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ x +'+'+ s +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ s +'+'+ x +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ y +'+'+ x +'+'+ z, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ y +'+'+ x +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ y +'+'+ s +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(z +'+'+ s +'+'+ y +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ z +'+'+ y +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ z +'+'+ x +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ z +'+'+ s +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(y +'+'+ s +'+'+ z +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ y +'+'+ z +'+'+ x, on_start_pressed)
+
+    def fixkey5(x,r,s):
+        keyboard.add_hotkey(x +'+'+ r +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(s+'+'+ x +'+'+ r, on_start_pressed)
+        keyboard.add_hotkey(x +'+'+ s +'+'+ r, on_start_pressed)
+        keyboard.add_hotkey(r +'+'+ x +'+'+ s, on_start_pressed)
+        keyboard.add_hotkey(s +'+'+ r +'+'+ x, on_start_pressed)
+        keyboard.add_hotkey(r +'+'+ s +'+'+ x, on_start_pressed)
+    
+    def mkey(x,y,z,a,r,s):
         fixkey (x,r)
         fixkey (y,r)
         fixkey (a,r)
@@ -74,8 +109,18 @@ try:
         fixkey3 (y,z,r)
         fixkey3 (y,a,r)
         fixkey3 (a,z,r)
+        fixkey5 (x,r,s)
+        fixkey5 (y,r,s)
+        fixkey5 (z,r,s)
+        fixkey5 (a,r,s)
+        fixkey4 (x,y,r,s)
+        fixkey4 (x,a,r,s)
+        fixkey4 (x,z,r,s)
+        fixkey4 (y,z,r,s)
+        fixkey4 (y,a,r,s)
+        fixkey4 (a,z,r,s)
 
-    mkey('w','a','s','d','r')
+    mkey('w','a','s','d','r','space')
     keyboard.add_hotkey('r', on_start_pressed)
     keyboard.add_hotkey('y', on_stop_pressed)
     keyboard.wait()

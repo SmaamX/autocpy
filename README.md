@@ -5,9 +5,8 @@ a Python script for silence auto click detector / anti cheat
 - [X] Random CPS
 - [X] Wave CPS
 - [ ] Right click
-- [ ] Input
+- [ ] Input settings
 - [ ] GUI
-- [ ] Logo
 ## instruction (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/4bc3621d-64f9-4215-9f43-df0e64e8ee80)
 # Pay attention

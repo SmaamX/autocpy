@@ -147,8 +147,13 @@ try:
         fixkey4 (y,z,r,s)
         fixkey4 (y,a,r,s)
         fixkey4 (a,z,r,s)
-
-    mkey('w','a','s','d','r','space')
+    def tomkey (x,y,z,a,r,s,c,sh):
+        mkey(x,y,z,a,r,s)
+        mkey(x,y,z,c,r,s)
+        mkey(x,y,z,a,r,c)
+        mkey(x,y,z,sh,r,s)
+        mkey(x,y,z,a,r,sh)
+    tomkey ('w','y','s','d','r','space','ctrl','shift')
     keyboard.add_hotkey('r', on_start_pressed)
     keyboard.add_hotkey('y', on_stop_pressed)
     keyboard.wait()

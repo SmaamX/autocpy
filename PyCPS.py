@@ -5,6 +5,11 @@ try:
 except ModuleNotFoundError:
     print ('pip install pyautogui')
 try:
+    import colorama
+    print(colorama.Fore.GREEN + "RIP Technoblade")
+except ModuleNotFoundError:
+    print("RIP Technoblade")
+try:
     import keyboard
     from keyboard import is_pressed as ip
 except ModuleNotFoundError:
@@ -30,18 +35,25 @@ try:
     h = 0
     def start():
         global h
-        p = ri(1,22)
+        p = ri(1,30)
         if p == 1:
-            coold = grandom(2,3,4,5)
+            coold = grandom(1,2,3,4)
             coold = coold * 10 ** -1
             sl(coold)
-        a = grandom(21,90,91,189)
-        g = grandom(12,29,30,101)
-        if a > h and not a-g <= 0:
-            a = a-g
+        if p == 30:
+            coold = grandom(1,3,4,5)
+            coold = coold * 10 ** -1
+            sl(coold)
+        a = grandom(11,51,52,131)
+        g = grandom(9,29,30,99)
+        m = grandom(2,5,6,8)
+        m1 = grandom(1,2,3,4)
+        m2 = grandom(2,3,4,5)
+        if a > h and not a/m2-g+m-m1 <= 0:
+            a = a/m2-g+m-m1
         elif a-g <= 0:
-            a = g-a
-        else: a = a+g
+            a = (g-a+m)*(m1/m2)+m2
+        else: a = (a+g-m)*(m1/m2)+m2
         h = a
         a = a * 10 ** -3
         sl(a)

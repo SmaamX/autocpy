@@ -35,17 +35,33 @@ try:
     h = 0
     def start():
         global h
-        p = ri(1,30)
+        p = ri(1,40)
         if p == 1:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -1
             sl(coold)
+        if p == 20:
+            coold = grandom(1,3,4,5)
+            coold = coold * 10 ** -2
+            sl(coold)
+        if p == 25:
+            coold = grandom(1,3,4,5)
+            coold = coold * 10 ** -3
+            sl(coold)
         if p == 30:
+            coold = grandom(1,2,3,4)
+            coold = coold * 10 ** -2
+            sl(coold)
+        if p == 35:
+            coold = grandom(1,2,3,4)
+            coold = coold * 10 ** -3
+            sl(coold)
+        if p == 40:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -1
             sl(coold)
-        a = grandom(11,51,52,131)
-        g = grandom(9,29,30,99)
+        a = grandom(5,30,31,171)
+        g = grandom(13,34,35,91)
         m = grandom(2,5,6,8)
         m1 = grandom(1,2,3,4)
         m2 = grandom(2,3,4,5)

@@ -40,23 +40,23 @@ try:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -1
             sl(coold)
-        if p == 20:
+        elif p == 20:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -2
             sl(coold)
-        if p == 25:
+        elif p == 25:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -3
             sl(coold)
-        if p == 30:
+        elif p == 30:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -2
             sl(coold)
-        if p == 35:
+        elif p == 35:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -3
             sl(coold)
-        if p == 40:
+        elif p == 40:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -1
             sl(coold)

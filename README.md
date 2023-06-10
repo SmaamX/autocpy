@@ -4,7 +4,7 @@ a Python script for silence auto click detector / anti cheat
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS
-- [ ] Right click
+- [X] Right click
 - [ ] Input settings
 - [ ] GUI
 ## Runtime (By arealme)

@@ -18,6 +18,10 @@ from time import sleep as sl
 from random import randint as ri
 pyautogui.PAUSE = 0
 print('Start')
+LBM = input('Last breath mode (Jitter):')
+LBM = True if any(x.lower() in ['y', 'yes'] for x in LBM) else False
+if LBM == True: print ('on')
+else: print ('off')
 
 def grandom(x,y,z,a):
     d = ri(1,2)
@@ -36,7 +40,11 @@ try:
     h2 = 0
     def start():
         global h
-        p = ri(1,40)
+        global LBM
+        if LBM == True:
+            p = ri(1,65)
+        elif LBM == False:
+            p = ri(1,40)
         if p == 1:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -1
@@ -61,8 +69,12 @@ try:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -1
             sl(coold)
-        a = grandom(5,30,31,171)
-        g = grandom(13,34,35,91)
+        if LBM == False:
+            a = grandom(10,30,31,170)
+            g = grandom(12,24,25,91)
+        elif LBM == True:
+            a = grandom(2,10,20,21)
+            g = grandom(9,11,25,26)
         m = grandom(2,5,6,8)
         m1 = grandom(1,2,3,4)
         m2 = grandom(2,3,4,5)
@@ -77,7 +89,11 @@ try:
         pyautogui.leftClick()
     def start2():
         global h2
-        p = ri(1,40)
+        global LBM
+        if LBM == True:
+            p = ri(1,65)
+        elif LBM == False:
+            p = ri(1,40)
         if p == 1:
             coold = grandom(1,2,3,4)
             coold = coold * 10 ** -1
@@ -102,8 +118,12 @@ try:
             coold = grandom(1,3,4,5)
             coold = coold * 10 ** -1
             sl(coold)
-        a = grandom(11,20,21,120)
-        g = grandom(12,24,25,91)
+        if LBM == False:
+            a = grandom(10,30,31,102)
+            g = grandom(12,24,25,91)
+        elif LBM == True:
+            a = grandom(7,21,22,24)
+            g = grandom(12,24,25,26)
         m = grandom(2,5,6,8)
         m1 = grandom(1,2,3,4)
         m2 = grandom(2,3,4,5)

@@ -1,4 +1,4 @@
-# AutoPy
+# ClickPy
 a Python script for silence auto click detector / anti cheat
 ### ToDo ✓
 - [ ] Shake

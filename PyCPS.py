@@ -199,6 +199,7 @@ try:
         fixkey (y,r,rt)
         fixkey (a,r,rt)
         fixkey (z,r,rt)
+        fixkey (s,r,rt)
         fixkey3 (x,y,r,rt)
         fixkey3 (x,a,r,rt)
         fixkey3 (x,z,r,rt)

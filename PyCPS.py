@@ -142,8 +142,12 @@ try:
         start2()
     def on_stop_pressed():
         print('Stop')
-        exit()
-
+        sl (1)
+        while True:
+            if keyboard.is_pressed('y'):
+                print('Restart')
+                sl (1)
+                break
     def fixkey (x,y,rt):
         keyboard.add_hotkey(x +'+'+ y, rt)
         keyboard.add_hotkey(y +'+'+ x, rt)

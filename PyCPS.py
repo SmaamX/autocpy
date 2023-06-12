@@ -18,11 +18,60 @@ from time import sleep as sl
 from random import randint as ri
 pyautogui.PAUSE = 0
 print('Start')
-LBM = input('Last breath mode (Jitter):')
+LBM = input('Jitter (Y/N):')
 LBM = True if any(x.lower() in ['y', 'yes'] for x in LBM) else False
 if LBM == True: print ('on')
 else: print ('off')
-
+#
+def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x5,y5,z5,a5,h2):
+    if LBM == False:
+        a = grandom(x2,y2,z2,a2)
+        g = grandom(x3,y3,z3,a3)
+    elif LBM == True:
+        a = grandom(x4,y4,z4,a4)
+        g = grandom(x5,y5,z5,a5)
+    m = grandom(x,y,z,ax)
+    m1 = grandom(x0,y0,z0,a0)
+    m2 = grandom(x1,y1,z1,a1)
+    if a > h2 and not a/m2-g+m-m1 <= 0:
+        a = a/m2-g+m-m1
+    elif a-g <= 0:
+        a = (g-a+m)*(m1/m2)+m2
+    elif a < h2 and not a/m2-g-m+(m1/2) <= 0:
+        a = a/m2-g-m+(m1/2)
+    else: a = (a+g-m)*(m1/m2)+m2
+    return a
+#
+def cooldown(a,b,c,d):
+    if LBM == True:
+        p = ri(a,b)
+    elif LBM == False:
+        p = ri(c,d)
+    if p == 1:
+        coold = grandom(1,2,3,4)
+        coold = coold * 10 ** -1
+        sl(coold)
+    elif p == 20:
+        coold = grandom(1,3,4,5)
+        coold = coold * 10 ** -2
+        sl(coold)
+    elif p == 25:
+        coold = grandom(1,3,4,5)
+        coold = coold * 10 ** -3
+        sl(coold)
+    elif p == 30:
+        coold = grandom(1,2,3,4)
+        coold = coold * 10 ** -2
+        sl(coold)
+    elif p == 35:
+        coold = grandom(1,2,3,4)
+        coold = coold * 10 ** -3
+        sl(coold)
+    elif p == 40:
+        coold = grandom(1,3,4,5)
+        coold = coold * 10 ** -1
+        sl(coold)
+#
 def grandom(x,y,z,a):
     d = ri(1,2)
     if d == 1:
@@ -34,107 +83,27 @@ def grandom(x,y,z,a):
         ri2 = ri(x,y)
         r = ri(ri2,r1)
     return r
-
 try:
-    h = 0
+    h1 = 0
     h2 = 0
     def start():
-        global h
+        global h1
         global LBM
-        if LBM == True:
-            p = ri(1,65)
-        elif LBM == False:
-            p = ri(1,40)
-        if p == 1:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -1
-            sl(coold)
-        elif p == 20:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -2
-            sl(coold)
-        elif p == 25:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -3
-            sl(coold)
-        elif p == 30:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -2
-            sl(coold)
-        elif p == 35:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -3
-            sl(coold)
-        elif p == 40:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -1
-            sl(coold)
-        if LBM == False:
-            a = grandom(10,30,31,170)
-            g = grandom(12,24,25,91)
-        elif LBM == True:
-            a = grandom(2,10,20,21)
-            g = grandom(9,11,25,26)
-        m = grandom(2,5,6,8)
-        m1 = grandom(1,2,3,4)
-        m2 = grandom(2,3,4,5)
-        if a > h and not a/m2-g+m-m1 <= 0:
-            a = a/m2-g+m-m1
-        elif a-g <= 0:
-            a = (g-a+m)*(m1/m2)+m2
-        else: a = (a+g-m)*(m1/m2)+m2
-        h = a
-        a = a * 10 ** -3
-        sl(a)
+        cooldown(1,65,1,40)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,35,52,53,206,12,24,25,91,2,10,20,21,9,11,25,26,h1)
+        h1 = p
+        p = p * 10 ** -3
+        sl(p)
         pyautogui.leftClick()
+#
     def start2():
         global h2
         global LBM
-        if LBM == True:
-            p = ri(1,65)
-        elif LBM == False:
-            p = ri(1,40)
-        if p == 1:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -1
-            sl(coold)
-        elif p == 20:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -2
-            sl(coold)
-        elif p == 25:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -3
-            sl(coold)
-        elif p == 30:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -2
-            sl(coold)
-        elif p == 35:
-            coold = grandom(1,2,3,4)
-            coold = coold * 10 ** -3
-            sl(coold)
-        elif p == 40:
-            coold = grandom(1,3,4,5)
-            coold = coold * 10 ** -1
-            sl(coold)
-        if LBM == False:
-            a = grandom(10,30,31,102)
-            g = grandom(12,24,25,91)
-        elif LBM == True:
-            a = grandom(7,21,22,24)
-            g = grandom(12,24,25,26)
-        m = grandom(2,5,6,8)
-        m1 = grandom(1,2,3,4)
-        m2 = grandom(2,3,4,5)
-        if a > h2 and not a/m2-g+m-m1 <= 0:
-            a = a/m2-g+m-m1
-        elif a-g <= 0:
-            a = (g-a+m)*(m1/m2)+m2
-        else: a = (a+g-m)*(m1/m2)+m2
-        h2 = a
-        a = a * 10 ** -3
-        sl(a)
+        cooldown(1,65,1,40)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,10,30,31,102,12,24,25,26,7,21,22,24,12,24,25,26,h2)
+        h2 = p
+        p = p * 10 ** -3
+        sl(p)
         pyautogui.rightClick()
     def on_start_pressed():
         start()
@@ -151,7 +120,7 @@ try:
     def fixkey (x,y,rt):
         keyboard.add_hotkey(x +'+'+ y, rt)
         keyboard.add_hotkey(y +'+'+ x, rt)
-
+#
     def fixkey3 (x,y,z,rt):
         keyboard.add_hotkey(x +'+'+ y +'+'+ z, rt)
         keyboard.add_hotkey(z+'+'+ x +'+'+ y, rt)
@@ -159,7 +128,7 @@ try:
         keyboard.add_hotkey(y +'+'+ x +'+'+ z, rt)
         keyboard.add_hotkey(z +'+'+ y +'+'+ x, rt)
         keyboard.add_hotkey(y +'+'+ z +'+'+ x, rt)
-
+#
     def fixkey4 (x,y,z,s,rt):
         keyboard.add_hotkey(x +'+'+ y +'+'+ z +'+'+ s, rt)
         keyboard.add_hotkey(x +'+'+ y +'+'+ s +'+'+ z, rt)
@@ -185,7 +154,7 @@ try:
         keyboard.add_hotkey(y +'+'+ z +'+'+ s +'+'+ x, rt)
         keyboard.add_hotkey(y +'+'+ s +'+'+ z +'+'+ x, rt)
         keyboard.add_hotkey(s +'+'+ y +'+'+ z +'+'+ x, rt)
-
+#
     def fixkey5(x,r,s,rt):
         keyboard.add_hotkey(x +'+'+ r +'+'+ s, rt)
         keyboard.add_hotkey(s+'+'+ x +'+'+ r, rt)
@@ -193,7 +162,7 @@ try:
         keyboard.add_hotkey(r +'+'+ x +'+'+ s, rt)
         keyboard.add_hotkey(s +'+'+ r +'+'+ x, rt)
         keyboard.add_hotkey(r +'+'+ s +'+'+ x, rt)
-    
+#  
     def mkey(x,y,z,a,r,s,rt):
         fixkey (x,r,rt)
         fixkey (y,r,rt)

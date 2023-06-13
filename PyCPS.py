@@ -4,6 +4,7 @@ try:
     import pyautogui
 except ModuleNotFoundError:
     print ('pip install pyautogui')
+    exit()
 try:
     import colorama
     print(colorama.Fore.GREEN + "RIP Technoblade")
@@ -14,6 +15,7 @@ try:
     from keyboard import is_pressed as ip
 except ModuleNotFoundError:
     print ('pip install keyboard')
+    exit()
 from time import sleep as sl
 from random import randint as ri
 pyautogui.PAUSE = 0
@@ -41,6 +43,16 @@ def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x
         a = a/m2-g-m+(m1/2)
     else: a = (a+g-m)*(m1/m2)+m2
     return a
+#
+def std(x,y,z):
+    std = ri (1,z)
+    x1 = ri (x,y)
+    x2 = ri (x,y)
+    x3 = ri (x,y)
+    if std == 1: x1 = x1 * 10 ** -1;x1+(x2*10**-2)+(x3*10**-3)
+    else: x1 = x1 * 10 ** -2;x1+(x3*10**-3)
+    x = x1
+    return x
 #
 def cooldown(a,b,c,d):
     if LBM == True:
@@ -90,21 +102,27 @@ try:
         global h1
         global LBM
         cooldown(1,65,1,40)
-        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,35,52,53,206,12,24,25,91,2,10,20,21,9,11,25,26,h1)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,21,22,83,4,10,11,55,2,10,20,21,9,11,25,26,h1)
         h1 = p
         p = p * 10 ** -3
+        st1 = std(1,2,80)
         sl(p)
-        pyautogui.leftClick()
+        pyautogui.mouseDown(button='left')
+        sl(st1)
+        pyautogui.mouseUp(button='left')
 #
     def start2():
         global h2
         global LBM
         cooldown(1,65,1,40)
-        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,10,30,31,102,12,24,25,26,7,21,22,24,12,24,25,26,h2)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,2,21,22,81,3,12,25,26,7,21,22,24,12,24,25,26,h2)
         h2 = p
         p = p * 10 ** -3
+        st = std(1,2,80)
         sl(p)
-        pyautogui.rightClick()
+        pyautogui.mouseDown(button='right')
+        sl(st)
+        pyautogui.mouseUp(button='right')
     def on_start_pressed():
         start()
     def on_start2_pressed():
@@ -195,7 +213,7 @@ try:
     tomkey ('w','a','s','d','f','space','ctrl','shift',on_start2_pressed)
     keyboard.add_hotkey('r', on_start_pressed)
     keyboard.add_hotkey('f', on_start2_pressed)
-    keyboard.add_hotkey('y', on_stop_pressed)
+    keyboard.add_hotkey('ctrl+y', on_stop_pressed)
     keyboard.wait()
 except KeyboardInterrupt:
     print ('Force stop')

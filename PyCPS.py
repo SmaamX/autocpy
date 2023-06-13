@@ -55,6 +55,9 @@ def std(x,y,z):
     return x
 #
 def cooldown(a,b,c,d):
+    global LBM
+    pt1 = False; pt2 = False; pt3 = False; pt4 = False
+    coold = 0
     if LBM == True:
         p = ri(a,b)
     elif LBM == False:
@@ -62,27 +65,32 @@ def cooldown(a,b,c,d):
     if p == 1:
         coold = grandom(1,2,3,4)
         coold = coold * 10 ** -1
-        sl(coold)
+        pt1 = True
     elif p == 20:
         coold = grandom(1,3,4,5)
         coold = coold * 10 ** -2
-        sl(coold)
+        pt2 = True
     elif p == 25:
         coold = grandom(1,3,4,5)
         coold = coold * 10 ** -3
-        sl(coold)
     elif p == 30:
         coold = grandom(1,2,3,4)
         coold = coold * 10 ** -2
-        sl(coold)
+        pt3 = True
     elif p == 35:
         coold = grandom(1,2,3,4)
         coold = coold * 10 ** -3
-        sl(coold)
     elif p == 40:
         coold = grandom(1,3,4,5)
         coold = coold * 10 ** -1
-        sl(coold)
+        pt4 = True
+    if pt1 or pt2 or pt3 or pt4 == True:
+        if pt1 == True: sp1 = ri(1,9);sp1 = sp1 * (10 ** -2);sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp1 + sp2
+        if pt2 == True: sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp2
+        if pt3 == True: sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp2
+        if pt4 == True: sp1 = ri(1,9);sp1 = sp1 * (10 ** -2);sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp1 + sp2
+    print(coold)
+    sl(coold)
 #
 def grandom(x,y,z,a):
     d = ri(1,2)
@@ -101,7 +109,7 @@ try:
     def start():
         global h1
         global LBM
-        cooldown(1,65,1,40)
+        cooldown(1,70,1,80)
         p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,21,22,83,4,10,11,55,2,10,20,21,9,11,25,26,h1)
         h1 = p
         p = p * 10 ** -3

@@ -6,6 +6,7 @@ a Python script for silence auto click detector / anti cheat
 - [X] Wave CPS
 - [X] Right click
 - [X] Press and wait
+- [ ] AlgorithmX2 (More accurate than previous versions)
 - [ ] Input settings
 - [ ] GUI
 ## Runtime (By arealme)

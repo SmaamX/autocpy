@@ -54,23 +54,25 @@ def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x
     return a
 #
 def std(x,y,z):
-    std = ri (1,z)
+    std = ri (0,z)
     x1 = ri (x,y)
-    x2 = ri (x,y)
-    x3 = ri (x,y)
-    if std == 1: x1 = x1 * 10 ** -1;x1+(x2*10**-2)+(x3*10**-3)
-    else: x1 = x1 * 10 ** -2;x1+(x3*10**-3)
+    x2 = ri (0,9)
+    x3 = ri (0,9)
+    if std == 1: x1 = x1 * 10 ** -1;x1=x1+(x2*10**-2)+(x3*10**-3)
+    elif std == 0: x1 = x1 * 10 ** -2;x1=x1+(x3*10**-3)
+    else:x1 = x1 * 10 ** -3
     x = x1
+    color('STD:'+str(std),1)
     return x
 #
-def cooldown(a,b,c,d):
+def cooldown(b,d):
     global LBM
     pt1 = False; pt2 = False; pt3 = False; pt4 = False
     coold = 0
     if LBM == True:
-        p = ri(a,b)
+        p = ri(1,b)
     elif LBM == False:
-        p = ri(c,d)
+        p = ri(1,d)
     if p == 1:
         coold = grandom(1,2,3,4)
         coold = coold * 10 ** -1
@@ -118,25 +120,30 @@ try:
     def start():
         global h1
         global LBM
-        cooldown(1,70,1,80)
+        cooldown(50,60)
         p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,21,22,83,4,10,11,55,2,10,20,21,9,11,25,26,h1)
+                                          #                   #
         h1 = p
         p = p * 10 ** -3
-        st1 = std(1,2,80)
+        if LBM==True: st1 = std(0,1,70)
+        else: st1 = std(0,1,60)
+        #color('STD:'+str(st1),2)
         sl(p)
         if keyboard.is_pressed('r'):
             pyautogui.mouseDown(button='left')
-            sl(st1)
+            #sl(st1)
             pyautogui.mouseUp(button='left')
 #
     def start2():
         global h2
         global LBM
-        cooldown(1,65,1,40)
+        cooldown(50,60)
         p = randx(2,5,6,8,1,2,3,4,2,3,4,5,2,21,22,81,3,12,25,26,7,21,22,24,12,24,25,26,h2)
+                                          #                   #
         h2 = p
         p = p * 10 ** -3
-        st = std(1,2,80)
+        if LBM==True: st = std(0,1,70)
+        else: st = std(0,1,60)
         sl(p)
         if keyboard.is_pressed('f'):
             pyautogui.mouseDown(button='right')

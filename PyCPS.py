@@ -115,9 +115,10 @@ try:
         p = p * 10 ** -3
         st1 = std(1,2,80)
         sl(p)
-        pyautogui.mouseDown(button='left')
-        sl(st1)
-        pyautogui.mouseUp(button='left')
+        if keyboard.is_pressed('r'):
+            pyautogui.mouseDown(button='left')
+            sl(st1)
+            pyautogui.mouseUp(button='left')
 #
     def start2():
         global h2
@@ -128,9 +129,10 @@ try:
         p = p * 10 ** -3
         st = std(1,2,80)
         sl(p)
-        pyautogui.mouseDown(button='right')
-        sl(st)
-        pyautogui.mouseUp(button='right')
+        if keyboard.is_pressed('f'):
+            pyautogui.mouseDown(button='right')
+            sl(st)
+            pyautogui.mouseUp(button='right')
     def on_start_pressed():
         start()
     def on_start2_pressed():

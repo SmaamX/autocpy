@@ -1,15 +1,14 @@
 #PyCPS Beta
-print ('Loading...')
+try:
+    from os import system as sys
+    sys('clear')
+    sys('cls')
+except: pass
 try:
     import pyautogui
 except ModuleNotFoundError:
     print ('pip install pyautogui')
     exit()
-try:
-    import colorama
-    print(colorama.Fore.GREEN + "RIP Technoblade")
-except ModuleNotFoundError:
-    print("RIP Technoblade")
 try:
     import keyboard
     from keyboard import is_pressed as ip
@@ -19,11 +18,21 @@ except ModuleNotFoundError:
 from time import sleep as sl
 from random import randint as ri
 pyautogui.PAUSE = 0
-print('Start')
+def color(x,C):
+    try:
+        from colorama import Fore as fo
+        if C==1:print(fo.RED+x)
+        if C==2:print(fo.GREEN+x)
+        if C==3:print(fo.BLUE+x)
+    except ModuleNotFoundError:
+        print(x)
+#
+color('START',3)
+color('R.I.P Technoblade',2)
 LBM = input('Jitter (Y/N):')
 LBM = True if any(x.lower() in ['y', 'yes'] for x in LBM) else False
-if LBM == True: print ('on')
-else: print ('off')
+if LBM == True: color('ON',2)
+else: color('OFF',1)
 #
 def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x5,y5,z5,a5,h2):
     if LBM == False:
@@ -89,7 +98,7 @@ def cooldown(a,b,c,d):
         if pt2 == True: sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp2
         if pt3 == True: sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp2
         if pt4 == True: sp1 = ri(1,9);sp1 = sp1 * (10 ** -2);sp2 = ri(1,9);sp2 = sp2 * (10 ** -3);coold = coold + sp1 + sp2
-    print(coold)
+    color('CoolDown:'+str(coold),2)
     sl(coold)
 #
 def grandom(x,y,z,a):

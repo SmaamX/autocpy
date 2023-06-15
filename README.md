@@ -1,7 +1,6 @@
 # PyEngine
 *remember PyEngine, detect is ...*
-dd
-ddddde
+
 a Python script for silence auto click detector / anti cheat
 ## Capabilities
 ### AutoClicker

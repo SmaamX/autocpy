@@ -131,8 +131,8 @@ try:
     def start():
         global h1
         global LBM
-        cooldown(50,60)
-        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,21,22,83,4,10,11,55,2,10,20,21,9,11,25,26,h1)
+        cooldown(40,50)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,31,32,191,4,10,11,55,2,10,20,21,9,11,25,26,h1)
                                           #                   #
         h1 = p
         p = p * 10 ** -3
@@ -148,13 +148,13 @@ try:
     def start2():
         global h2
         global LBM
-        cooldown(50,60)
-        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,2,21,22,81,3,12,25,26,7,21,22,24,12,24,25,26,h2)
+        cooldown(40,50)
+        p = randx(2,5,6,8,1,2,3,4,2,3,4,5,12,31,32,191,3,12,25,26,7,21,22,24,12,24,25,26,h2)
                                           #                   #
         h2 = p
         p = p * 10 ** -3
-        if LBM==True: st = std(0,1,70)
-        else: st = std(0,1,60)
+        if LBM==True: st = std(0,1,50)
+        else: st = std(0,1,40)
         sl(p)
         if keyboard.is_pressed('f'):
             pyautogui.mouseDown(button='right')

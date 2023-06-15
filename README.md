@@ -8,7 +8,7 @@ a Python script for silence auto click detector / anti cheat
 - [X] Right click
 - [X] Press and wait
 - [ ] AlgorithmX2 (More accurate than previous versions)
-- [ ] 
+
 ### Main
 - [ ] Input settings
 - [ ] GUI

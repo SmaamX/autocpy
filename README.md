@@ -1,7 +1,5 @@
-# PyMacroX
-*remember macro, detect is ...*
-
-a Python script for silence anti-cheats
+# How does it work?
+With random values and maximum simulation of human clicks, it can be difficult or even impossible to detect a macro and auto-click.
 ## Capabilities
 ### AutoClicker
 - [ ] Shake

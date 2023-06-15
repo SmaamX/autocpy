@@ -1,11 +1,12 @@
 # ClickPy
 a Python script for silence auto click detector / anti cheat
-### ToDo ✓
+### Capabilities
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS
 - [X] Right click
 - [X] Press and wait
+- [X] Hide process
 - [ ] AlgorithmX2 (More accurate than previous versions)
 - [ ] Input settings
 - [ ] GUI

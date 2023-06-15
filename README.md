@@ -1,7 +1,7 @@
 # PyEngine
 a Python script for silence auto click detector / anti cheat
-### Capabilities
-# AutoClicker
+## Capabilities
+### AutoClicker
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS
@@ -9,7 +9,7 @@ a Python script for silence auto click detector / anti cheat
 - [X] Press and wait
 - [ ] AlgorithmX2 (More accurate than previous versions)
 - [ ] 
-# Main
+### Main
 - [ ] Input settings
 - [ ] GUI
 - [X] Hide process

@@ -1,4 +1,4 @@
-# How does it work?
+# How it works?
 With random values and maximum simulation of human clicks, it can be difficult or even impossible to detect a macro and auto-click.
 ## Capabilities
 ### AutoClicker

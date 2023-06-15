@@ -1,9 +1,20 @@
 #PyCPS Beta
+from sys import argv;from os import system as sys
 try:
-    from os import system as sys
-    sys('clear')
-    sys('cls')
-except: pass
+    if __name__ == '__main__':
+        import random
+        import string
+        import os
+        sys('clear')
+        sys('cls')
+        length = random.randint(9, 10)
+        proc = ''.join(random.choices(string.ascii_lowercase, k=length))
+        argv[0]= proc
+        print('Spoofed:',proc)
+        pid = os.getpid()
+        print(pid)
+
+except: print('un_spoof')
 try:
     import pyautogui
 except ModuleNotFoundError:

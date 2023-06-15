@@ -1,15 +1,19 @@
-# ClickPy
+# PyEngine
 a Python script for silence auto click detector / anti cheat
 ### Capabilities
+# AutoClicker
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS
 - [X] Right click
 - [X] Press and wait
-- [X] Hide process
 - [ ] AlgorithmX2 (More accurate than previous versions)
+- [ ] 
+# Main
 - [ ] Input settings
 - [ ] GUI
+- [X] Hide process
+
 ## Runtime (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/bd3544dd-2077-4e92-883a-34d8edea943c)
 # Pay attention

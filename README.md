@@ -15,7 +15,7 @@ a Python script for silence auto click detector / anti cheat
 - [ ] Input settings
 - [ ] GUI
 - [X] Hide process
-
+- [ ] Custom script
 ## Runtime [Auto clicker] (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/bd3544dd-2077-4e92-883a-34d8edea943c)
 # Pay attention

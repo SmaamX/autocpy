@@ -1,5 +1,5 @@
-# PyCheat
-*remember PyCheat, detect is ...*
+# PyMacroX
+*remember macro, detect is ...*
 
 a Python script for silence anti-cheats
 ## Capabilities

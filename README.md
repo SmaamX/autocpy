@@ -1,7 +1,7 @@
 # PyEngine
 *remember PyEngine, detect is ...*
 
-a Python script for silence auto click detector / anti cheat
+a Python script for silence anti-cheats
 ## Capabilities
 ### AutoClicker
 - [ ] Shake

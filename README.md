@@ -1,5 +1,5 @@
-# PyEngine
-*remember PyEngine, detect is ...*
+# PyCheat
+*remember PyCheat, detect is ...*
 
 a Python script for silence anti-cheats
 ## Capabilities

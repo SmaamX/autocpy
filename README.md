@@ -14,7 +14,7 @@ Cheat engine but for Python
 - [ ] Bypass detect
 
 ### Main
-- [ ] Input settings
+- [X] Input settings
 - [ ] GUI
 - [X] Hide process
 - [ ] Custom script (.mcp files)

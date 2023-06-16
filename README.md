@@ -1,5 +1,5 @@
 # How it works
-With random values and maximum simulation of human clicks by some algorithms, it can be difficult or even impossible to detect a macro and auto-click.
+With random values and maximum simulation of human clicks by some algorithms, it can be difficult or even make impossible to detect a macro and auto-click.
 ## Capabilities
 ### AutoClicker
 - [ ] Shake

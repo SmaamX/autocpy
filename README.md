@@ -1,7 +1,7 @@
 # How it works
 Cheat engine but for Python
 ## Capabilities
-### AutoClicker (Macro)
+### AutoClicker [Macro]
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS
@@ -23,7 +23,7 @@ Cheat engine but for Python
 ### ComingSoon
 + objects on the screenshot
 + Scan and manipulate memory
-## Runtime [Auto clicker] (By arealme)
+## Runtime [Macro] (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/bd3544dd-2077-4e92-883a-34d8edea943c)
 # Pay attention
 It's not completely immune to brutal auto-click/macro detectors!

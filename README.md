@@ -19,7 +19,7 @@ Cheat engine but for Python
 - [X] Hide process
 - [ ] Custom script (.mcp files)
 - [ ] injector
-- [ ] PyInstaller
+- [X] PyInstaller
 
 ### ComingSoon
 + objects on the screenshot

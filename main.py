@@ -5,7 +5,6 @@ try:
         import random
         import string
         import os
-        sys('clear')
         sys('cls')
         length = random.randint(9, 10)
         proc = ''.join(random.choices(string.ascii_lowercase, k=length))
@@ -29,6 +28,7 @@ def color(x,C):
     except ModuleNotFoundError:
         print(x)
 if inp == 1:
+    sys('cls')
     try:
         import pyautogui
     except ModuleNotFoundError:
@@ -50,6 +50,7 @@ if inp == 1:
     LBM = True if any(x.lower() in ['y', 'yes'] for x in LBM) else False
     if LBM == True: color('ON',2)
     else: color('OFF',1)
+    sl(1)
 #
     def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x5,y5,z5,a5,h2):
         if LBM == False:
@@ -254,8 +255,10 @@ if inp == 1:
             mkey(x,y,z,a,r,c,rt)
             mkey(x,y,z,sh,r,s,rt)
             mkey(x,y,z,a,r,sh,rt)
+        sys('cls')
         while True:
-            try:keymap = int(input('YourKeyMap\n1.Minecraft\n2.Custom\n'))
+            color('KeyMap editor',2)
+            try:keymap = int(input('1.Minecraft\n2.Custom\n'))
             except: keymap = 0
             if keymap == 1:
                 leftCL = 'r';rightCL = 'f'
@@ -264,10 +267,12 @@ if inp == 1:
                 keyboard.add_hotkey('r',on_start_pressed);keyboard.add_hotkey('f',on_start2_pressed);skey = 'ctrl+y';keyboard.add_hotkey('ctrl+y',on_stop_pressed)#for stop - skey = 'x';keyboard.add_hotkey('x',on_stop_pressed)
                 break
             elif keymap == 2:
+                sys('cls')
                 #0 and ckeymapR just for r and f key if 1 just 1 key = [0]
                 def godkey(ckeymap):
                     global leftCL
                     global rightCL
+                    global skey
                     ERR = False
                     try:
                         while True:ckeymap.remove(',')
@@ -294,7 +299,7 @@ if inp == 1:
         keyboard.wait()
     except KeyboardInterrupt:
         print ('ForceStop')
-elif inp == 2: print('coming soon')
+elif inp == 2:sys('cls');print('coming soon')
 ##
-elif inp == 3: print('coming soon')
+elif inp == 3:sys('cls');print('coming soon')
 ##

@@ -12,6 +12,7 @@ Cheat engine but for Python
 ### Memory editor
 - [ ] Beginning of the project
 - [ ] Bypass detect
+- [ ] Isolated process
 
 ### Main
 - [X] Input settings

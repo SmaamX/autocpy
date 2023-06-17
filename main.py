@@ -12,6 +12,13 @@ try:
         print('Spoofed:',proc)
         pid = os.getpid()
         print(pid)
+        try:
+            import ctypes
+            print('[FucHide]')
+            han = ctypes.windll.kernel32.GetModuleHandleW(None)
+            ctypes.windll.kernel32.SetProcessWorkingSetSizeEx(han,-1,-1,0x100)
+        except: print('[un_FucHide]')
+
 except: print('un_spoof')
 while True:
     try:inp = int(input('1.AutoCLICKER\n2.MEdit\n3.Macro\n4.Exit\n'))

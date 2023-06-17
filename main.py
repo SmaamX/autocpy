@@ -1,7 +1,7 @@
 #PyCPS Beta
 from sys import argv;from os import system as sys
 try:
-    if __name__ == '__main__':
+    if __name__ == '__main__': #a module or not?
         import random
         import string
         import os

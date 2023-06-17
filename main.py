@@ -265,25 +265,31 @@ if inp == 1:
                 break
             elif keymap == 2:
                 #0 and ckeymapR just for r and f key if 1 just 1 key = [0]
-                ckeymap = list(input('Give custom KeyMap {1,9} keys\nexample ~ r,f,a,w,d,end ~~ (r) = hotkey for r click and (f) for l\n0 = r and 1 = f and end = ctrl + (stop key)\n',))
-                try:
-                    while True:ckeymap.remove(',')
-                except: pass
-                ER=False
-                ckeymapA = len(ckeymap)
-                if ckeymapA > 1:ckeymapS = ckeymap[-1];ckeymap.remove(ckeymap[-1]);print ('stop key=','Ctrl'+'+'+ckeymapS);skey = ckeymapS;keyboard.add_hotkey('ctrl'+'+'+ckeymapS, on_stop_pressed)
-                print('Keys:',ckeymap);ckeymapN = len(ckeymap)
-                if ckeymapN == 1:keyboard.add_hotkey(ckeymap[0], on_start_pressed);break
-                elif ckeymapN == 2:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],'F6','F7','F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],'F6','F7','F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 3:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],'F7','F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],'F7','F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 4:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],'F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],'F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 5:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],'F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],'F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 6:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],'F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],'F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 7:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],'F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],'F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN == 8:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],ckeymap[7],'F11',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],ckeymap[7],'F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed);break
-                elif ckeymapN > 8:color('Error/Above',1)
-                elif ckeymapN < 1:color('Error/Below',1)
-                elif ckeymapN == 0:color('Error/Zero',1)
+                def godkey(ckeymap):
+                    global leftCL
+                    global rightCL
+                    ERR = False
+                    try:
+                        while True:ckeymap.remove(',')
+                    except: pass
+                    ckeymapA = len(ckeymap)
+                    if ckeymapA > 1:ckeymapS = ckeymap[-1];ckeymap.remove(ckeymap[-1]);print ('stop key=','Ctrl'+'+'+ckeymapS);skey = ckeymapS;keyboard.add_hotkey('ctrl'+'+'+ckeymapS, on_stop_pressed)
+                    print('Keys:',ckeymap);ckeymapN = len(ckeymap)
+                    if ckeymapN == 1:keyboard.add_hotkey(ckeymap[0], on_start_pressed)
+                    elif ckeymapN == 2:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],'F6','F7','F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],'F6','F7','F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 3:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],'F7','F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],'F7','F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 4:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],'F8','F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],'F8','F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 5:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],'F9','F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],'F9','F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 6:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],'F10','F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],'F10','F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 7:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],'F11','F12',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],'F12','F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN == 8:leftCL = ckeymap[0];rightCL = ckeymap[1];tomkey (ckeymap[0],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],ckeymap[7],'F11',on_start_pressed);tomkey (ckeymap[1],ckeymap[2],ckeymap[3],ckeymap[4],ckeymap[5],ckeymap[6],ckeymap[7],'F11',on_start2_pressed);keyboard.add_hotkey(ckeymap[0], on_start_pressed);keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                    elif ckeymapN > 8:color('Error/Above',1);ERR=True
+                    elif ckeymapN < 1:color('Error/Below',1);ERR=True
+                    elif ckeymapN == 0:color('Error/Zero',1);ERR=True
+                    return ERR
+                ckeymap = list(input('Give custom KeyMap {1,9} keys\nexample ~ r,f,a,w,d,end ~~ (r) = hotkey for r click and (f) for l\n0 = r and 1 = f and end = ctrl + (stop key)\n'));ERR = godkey(ckeymap)
+                if ERR == False:break
+                elif ERR == True:pass
             else: color('Bad input',1)
         keyboard.wait()
     except KeyboardInterrupt:

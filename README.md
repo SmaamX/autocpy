@@ -17,6 +17,7 @@ Cheat engine but for Python
 ### Main
 - [X] Input settings
 - [ ] GUI
+- [X] CLI
 - [X] Hide process
 - [ ] Custom script (.mcp files)
 - [ ] injector

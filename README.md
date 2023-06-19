@@ -10,8 +10,8 @@ Cheat engine but for Python
 - [ ] AlgorithmX2 (More accurate than previous versions)
 
 ### Memory editor
-- [ ] Beginning of the project
-- [ ] Bypass detect
+- [X] Beginning of the project
+- [X] Bypass detect
 - [ ] Isolated process
 
 ### Main
@@ -20,7 +20,7 @@ Cheat engine but for Python
 - [X] CLI
 - [X] Hide process
 - [ ] Custom script (.mcp files)
-- [ ] injector
+- [X] Internal Terminal
 - [X] PyInstaller
 
 ### ComingSoon

@@ -24,7 +24,7 @@ Cheat engine but for Python
 - [X] PyInstaller
 
 ### ComingSoon
-+ objects on the screenshot
++ Detect objects on the screenshot
 + Scan and manipulate memory
 + Hard at work on a complete internal terminal
 + Add more algorithms

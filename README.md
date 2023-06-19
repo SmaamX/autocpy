@@ -26,6 +26,8 @@ Cheat engine but for Python
 ### ComingSoon
 + objects on the screenshot
 + Scan and manipulate memory
++ Hard at work on a complete internal terminal
++ Add more algorithms
 ## Runtime [Macro] (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/bd3544dd-2077-4e92-883a-34d8edea943c)
 # Pay attention

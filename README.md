@@ -12,11 +12,12 @@ Cheat engine but for Python
 ### Memory editor
 - [X] Beginning of the project
 - [X] Bypass detect
-- [ ] Isolated process
+- [X] Isolated process
+- [ ] Editor
 
 ### Main
 - [X] Input settings
-- [ ] GUI
+- [X] GUI
 - [X] CLI
 - [X] Hide process
 - [ ] Custom script (.mcp files)

@@ -1,7 +1,7 @@
 # How it works
-Cheat engine but for Python
+Magisk but for Windows
 ## Capabilities
-### AutoClicker [Macro]
+### AutoClicker [Default module]
 - [ ] Shake
 - [X] Random CPS
 - [X] Wave CPS

@@ -20,7 +20,7 @@ Magisk but for Windows
 - [X] GUI
 - [X] CLI
 - [X] Hide process
-- [ ] Process spoofer
+- [X] Process spoofer
 - [ ] Custom script (.mcp files)
 - [X] Internal Terminal
 - [X] PyInstaller

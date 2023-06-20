@@ -1,11 +1,17 @@
 #PyCPS Beta
+import tkinter as tk
 from sys import argv;from os import system as sys
 try:
     if __name__ == '__main__':
-        import random
+        import tempfile
         import string
+        import random
+        TMP = tempfile.gettempdir() + "\\" + ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
+        import psutil
         import os
+        import ctypes
         sys('cls')
+        print('STemp:',TMP)
         length = random.randint(9, 10)
         proc = ''.join(random.choices(string.ascii_lowercase, k=length))
         argv[0]= proc
@@ -13,21 +19,26 @@ try:
         pid = os.getpid()
         print('PID:',pid)
         try:
-            import ctypes
             print('[FucHide]')
             han = ctypes.windll.kernel32.GetModuleHandleW(None)
             ctypes.windll.kernel32.SetProcessWorkingSetSizeEx(han,-1,-1,0x100)
             spoof2 = ''.join(random.choices(string.ascii_lowercase, k=length))
             ctypes.windll.kernel32.SetConsoleTitleW(spoof2);print('ConsoleTitle:',spoof2)
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000002)
+            p = psutil.Process(pid)
+            p.nice(psutil.HIGH_PRIORITY_CLASS)
+            import ctypes
+#
+            PROCESS_ALL_ACCESS = 0x1F0FFF
+            PROCESS_QUERY_INFORMATION = 0x0400
+            PROCESS_VM_READ = 0x0010
+            han3 = ctypes.windll.kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, ctypes.windll.kernel32.GetCurrentProcessId())
+            path = ctypes.create_unicode_buffer(1024)
+            ctypes.windll.psapi.GetModuleFileNameExW(han3, 0, path, ctypes.sizeof(path))
+            ctypes.windll.ntdll.NtSetInformationProcess(han3, 0x1D, path, ctypes.sizeof(path))
+            ctypes.windll.kernel32.CloseHandle(han3)
         except: print('[un_FucHide]')
-
 except: print('un_spoof')
-while True:
-    try:inp = int(input('1.AutoC\n2.TermPy\n3.Exit\n'))
-    except: inp = 0
-    if inp == 1 or inp == 2 or inp:break
-    elif inp == 4:exit()
-    else: print('Bad input')
 def color(x,C):
     try:
         from colorama import Fore as fo
@@ -36,7 +47,12 @@ def color(x,C):
         if C==3:print(fo.BLUE+x)
     except ModuleNotFoundError:
         print(x)
-if inp == 1:
+def AutoCS():
+    global LBM
+    global h1
+    global leftCL
+    global rightCL
+    global h2
     sys('cls')
     try:
         import pyautogui
@@ -62,6 +78,7 @@ if inp == 1:
     sl(1)
 #
     def randx(x,y,z,ax,x0,y0,z0,a0,x1,y1,z1,a1,x2,y2,z2,a2,x3,y3,z3,a3,x4,y4,z4,a4,x5,y5,z5,a5,h2):
+        global LBM
         if LBM == False:
             a = grandom(x2,y2,z2,a2)
             g = grandom(x3,y3,z3,a3)
@@ -313,12 +330,36 @@ if inp == 1:
     except KeyboardInterrupt:
         print ('ForceStop')
 #################TermPy_conf#################
-elif inp == 2:
-    sys('cls');color('TermPy 1.0',2);import code;import ctypes;import subprocess;import tempfile;import random;import string
+def TermPyS():
+    sys('cls');color('TermPy 1.2',2);import code;import ctypes;import subprocess;import tempfile;import random;import string
     class MgiConsole(code.InteractiveConsole):
-        def _setup(self):
-            self.filename = tempfile.gettempdir() + "\\" + ''.join(random.choices(string.ascii_lowercase + string.digits, k=8)) + ".py"
-            self.buffer = []
-            self.more = 0
+        TMP2 = tempfile.gettempdir() + "\\" + ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
+        print('STemp2:',TMP2)
+        import code;import ctypes;import subprocess;import tempfile;import random;import string
     console = MgiConsole()
     console.interact()
+#GUI
+import tkinter as tk
+import random
+root = tk.Tk()
+def rword():
+    return ''.join(random.choice(string.ascii_letters) for i in range(7))
+root.title(rword())
+#
+def AutoC():
+    root.destroy()
+    AutoCS()
+def TermPy():
+    root.destroy()
+    TermPyS()
+def Exit():
+    root.destroy()
+    exit()
+#
+AutoC = tk.Button(root, text="AutoC", command=AutoC)
+AutoC.pack()
+TermPy = tk.Button(root, text="TermPy", command=TermPy)
+TermPy.pack()
+Exit = tk.Button(root, text="Exit", command=Exit)
+Exit.pack()
+root.mainloop()

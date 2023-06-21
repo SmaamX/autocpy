@@ -1,5 +1,5 @@
 # How it works
-Magisk but for Windows
+magic mask but for Windows
 ## Capabilities
 ### AutoClicker [Default module]
 - [ ] Shake

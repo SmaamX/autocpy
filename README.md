@@ -13,7 +13,7 @@ magic mask but for Windows
 - [X] Beginning of the project
 - [X] Bypass detect
 - [X] Isolated process
-- [ ] Editor
+- [X] Editor
 
 ### Main
 - [X] Input settings

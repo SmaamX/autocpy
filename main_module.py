@@ -329,6 +329,58 @@ def AutoCS():
         keyboard.wait()
     except KeyboardInterrupt:
         print ('ForceStop')
+def CheatX():
+    import ctypes
+    import psutil
+    import sys
+    import time
+    color('CheatX UNSTABLE',1)
+    PROCESS_ALL_ACCESS = 0x1F0FFF
+    kernel32 = ctypes.windll.kernel32
+    def get_process_list():
+        process_list = []
+        for proc in psutil.process_iter():
+            try:
+                process_name = proc.name()
+                process_list.append({"pid": proc.pid, "name": process_name})
+            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):pass
+        return process_list
+#
+    def select_process(process_list):
+        print("Select process:")
+        for idx, process in enumerate(process_list):
+            print(f"{idx+1}. {process['name']}")
+        choice = int(input("Enter a number: "))
+        selected_pid = process_list[choice-1]["pid"]
+        return selected_pid
+#
+    def search_memory(selected_pid, value, speed):
+        process_handle = kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, selected_pid)
+        address_list = []
+        progress = 0
+        start_time = time.time()
+        print("Starting search...")
+        for i in range(0, 0x7fffffff, speed):
+            try:
+                read_value = ctypes.c_int()
+                kernel32.ReadProcessMemory(process_handle, i, ctypes.byref(read_value), ctypes.sizeof(read_value), None)
+                if read_value.value == value:
+                    address_list.append(i)
+                print(f"Checking address {hex(i)}...")
+            except:pass
+        if len(address_list) > 0:
+            print("\nFound addresses:")
+            for address in address_list:
+                print(hex(address))
+        else:
+            print("\nNo addresses found.")
+        elapsed_time = time.time() - start_time
+        print(f"Search completed in {elapsed_time:.2f} seconds.")
+    process_list = get_process_list()
+    selected_pid = select_process(process_list)
+    value = int(input("Enter a value: "))
+    speed = int(input("Enter search speed (default=4): ") or 4)
+    search_memory(selected_pid, value, speed)
 #################TermPy_conf#################
 def TermPyS():
     sys('cls');color('TermPy 1.2',2);import code;import ctypes;import subprocess;import tempfile;import random;import string
@@ -352,6 +404,9 @@ def AutoC():
 def TermPy():
     root.destroy()
     TermPyS()
+def CheatX2():
+    root.destroy()
+    CheatX()
 def Exit():
     root.destroy()
     exit()
@@ -360,6 +415,8 @@ AutoC = tk.Button(root, text="AutoC", command=AutoC)
 AutoC.pack()
 TermPy = tk.Button(root, text="TermPy", command=TermPy)
 TermPy.pack()
+CheatX2 = tk.Button(root, text="CheatX", command=CheatX2)
+CheatX2.pack()
 Exit = tk.Button(root, text="Exit", command=Exit)
 Exit.pack()
 root.mainloop()

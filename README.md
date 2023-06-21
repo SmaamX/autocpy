@@ -13,7 +13,7 @@ A mask but for Windows
 - [X] Beginning of the project
 - [X] Bypass detect
 - [X] Isolated process
-- [X] Editor
+- [X] CheatX
 
 ### Main
 - [X] Input settings

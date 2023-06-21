@@ -11,7 +11,7 @@ A mask but for Windows
 
 ### Memory editor
 - [X] Beginning of the project
-- [X] Bypass detect
+- [ ] Bypass detect
 - [X] Isolated process
 - [ ] MeX
 

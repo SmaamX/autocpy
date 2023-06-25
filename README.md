@@ -1,5 +1,5 @@
 # How it works
-A mask but for Windows
+A macro but humanized
 ## Capabilities
 ### AutoClicker [Default module]
 - [ ] Shake

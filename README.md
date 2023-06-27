@@ -2,7 +2,7 @@
 A macro but humanized
 ## Capabilities
 ### AutoClicker [Default module]
-- [ ] Shake
+- [X] Shake
 - [X] Random CPS
 - [X] Wave CPS
 - [X] Right click

@@ -21,6 +21,7 @@ A macro but humanized
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer
+- [ ] Random file name
 - [ ] Custom script (.mcp files)
 - [X] Internal Terminal
 - [X] PyInstaller

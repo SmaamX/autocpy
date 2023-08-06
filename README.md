@@ -17,6 +17,7 @@ A macro but humanized
 
 ### Main
 - [X] Input settings
+- [ ] Module (Help build more custom macros)
 - [X] GUI
 - [X] CLI
 - [X] Hide process

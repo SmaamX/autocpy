@@ -8,7 +8,7 @@ A macro but humanized
 - [X] Right click
 - [X] Press and wait
 - [ ] AlgorithmX2 (More accurate than previous versions)
-
+- [ ] Keyboard support
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

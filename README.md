@@ -35,3 +35,4 @@ A macro but humanized
 # Pay attention
 It's not completely immune to brutal cheat and modifications detectors!
 I will not accept any responsibility for your accounts being banned or destruction of Windows, if you point your finger at me for this, I laugh at you.
+Of course, you can use hiding methods to create a virus or ..., but I will not accept any responsibility 

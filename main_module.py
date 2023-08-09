@@ -761,7 +761,7 @@ def AutoCS():
                     elif stnum == 4: tomkey (Chl[0],Chl[1],synck[0],synck[1],synck[2],synck[3],'F4','F5',AutoKeyBS)
                     elif stnum == 5: tomkey (Chl[0],Chl[1],synck[0],synck[1],synck[2],synck[3],synck[4],'F5',AutoKeyBS)
                     elif stnum == 6: tomkey (Chl[0],Chl[1],synck[0],synck[1],synck[2],synck[3],synck[4],synck[5],AutoKeyBS)
-                    keyboard.add_hotkey(Chl[1],AutoKeyBS)
+                    keyboard.add_hotkey(Chl[0]+'+'+Chl[1],startKey);keyboard.add_hotkey(Chl[1]+'+'+Chl[0],AutoKeyBS)
                 else:print('Bad input Key');exit()
                 if ChlpsN == 1:Chlps=[Chlps[0],'=','=','=','=']
                 elif ChlpsN == 2:Chlps=[Chlps[0],Chlps[1],'=','=','=']

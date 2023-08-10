@@ -25,6 +25,7 @@ A macro but humanized
 - [ ] Random file name
 - [ ] Custom script (.mcp files)
 - [X] Internal Terminal
+- [ ] Cython
 - [X] PyInstaller
 
 ### ComingSoon

@@ -7,7 +7,7 @@ A macro but humanized
 - [X] Wave CPS
 - [X] Right click
 - [X] Press and wait
-- [ ] AlgorithmX2 (More accurate than previous versions)
+- [ ] AlgorithmX2
 - [X] Keyboard support
 ### Memory editor
 - [X] Beginning of the project
@@ -16,16 +16,13 @@ A macro but humanized
 - [ ] MeX
 
 ### Main
-- [X] Input settings
-- [ ] Module (Help build more custom macros)
 - [X] GUI
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer
 - [ ] Random file name
-- [ ] Custom script (.mcp files)
+- [ ] Custom script
 - [X] Internal Terminal
-- [ ] Cython
 - [X] PyInstaller
 
 ### ComingSoon

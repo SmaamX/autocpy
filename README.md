@@ -26,8 +26,7 @@ A macro but humanized
 - [X] PyInstaller
 
 ### ComingSoon
-+ Scan and manipulate memory
-+ Add more algorithms [AutoClicker]
++ Fireless algorithms [AutoClicker]
 ## Runtime [AutoClicker] (By arealme)
 ![arealme](https://github.com/SmaamX/AutoPy/assets/90418723/bd3544dd-2077-4e92-883a-34d8edea943c)
 # Pay attention

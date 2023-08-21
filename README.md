@@ -9,7 +9,7 @@ A macro but humanized
 - [X] Press and wait
 - [ ] AlgorithmX2
 - [X] Keyboard support
-- [ ] Keyboard custom Delay
+- [ ] Keyboard custom delay
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

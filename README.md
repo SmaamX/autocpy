@@ -11,7 +11,7 @@ A macro but humanized
 - [X] Right click
 - [X] Press and wait
 - [ ] Sync PAW
-- [ ] AlgorithmX2
+- [ ] AlgorithmX²
 - [X] Keyboard support
 - [ ] Keyboard custom delay
 ### Memory editor

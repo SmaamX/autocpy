@@ -1,5 +1,5 @@
 # How it works
-A macro but humanized
+Macro but with some neural randomization
 ## Capabilities
 ### AutoClicker [Default module]
 - [X] Shake

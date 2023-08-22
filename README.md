@@ -32,7 +32,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] PyInstaller
 - [ ] Final version
 
-### ComingSoon
+### Main objective
 + Fireless algorithms [AutoClicker]
 
 # Pay attention

@@ -4,10 +4,13 @@ A macro but humanized
 ### AutoClicker [Default module]
 - [X] Shake
 - [X] 4X Shake
+- [ ] Sync Shake
 - [X] Random CPS
 - [X] Wave CPS
+- [ ] Sync wave
 - [X] Right click
 - [X] Press and wait
+- [ ] Sync PAW
 - [ ] AlgorithmX2
 - [X] Keyboard support
 - [ ] Keyboard custom delay

@@ -30,10 +30,10 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Custom script
 - [X] Internal Terminal
 - [X] PyInstaller
-- [ ] Final version
 
 ### Main objective
 + Fireless algorithms [AutoClicker]
+- [ ] Final version
 
 # Pay attention
 It's not completely immune to brutal cheat and modifications detectors!

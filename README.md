@@ -1,5 +1,6 @@
-# How it works
+# What is this
 Macro but with some neural randomization
+You can use it for anything, to increase your click speed (CPS) in minecraft or any other game
 ## Capabilities
 ### AutoClicker [Default module]
 - [X] Shake

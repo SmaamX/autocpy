@@ -22,6 +22,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 
 ### Main
 - [X] GUI
+- [ ] Full GUI
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer
@@ -29,6 +30,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Custom script
 - [X] Internal Terminal
 - [X] PyInstaller
+- [ ] Final version
 
 ### ComingSoon
 + Fireless algorithms [AutoClicker]

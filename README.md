@@ -11,7 +11,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] Right click
 - [X] Press and wait
 - [ ] Sync PAW
-- [ ] AlgorithmX²
+- [X] AlgorithmX²
 - [X] Keyboard support
 - [ ] Keyboard custom delay
 ### Memory editor

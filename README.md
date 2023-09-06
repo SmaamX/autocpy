@@ -4,7 +4,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 ### AutoClicker [Default module]
 - [X] Shake
 - [X] 4X Shake
-- [ ] Sync Shake
+- [X] Sync Shake
 - [X] Random CPS
 - [X] Wave CPS
 - [ ] Sync wave

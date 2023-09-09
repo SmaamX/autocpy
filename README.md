@@ -36,6 +36,6 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Final version
 
 # Pay attention
-It's not completely immune to brutal cheat and modifications detectors!
+It's not completely immune to brutal anti-cheat and modifications detectors!
 I will not accept any responsibility for your accounts being banned or destruction of Windows, if you point your finger at me for this, I laugh at you.
 Of course, you can use hiding methods to create a rootkit or ..., but still I will not accept any responsibility)

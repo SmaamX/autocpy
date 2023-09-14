@@ -1,7 +1,6 @@
 # PyCPS Beta
 from os import system as sys
 from sys import argv
-
 try:
     if __name__ == '__main__':
         import tempfile
@@ -12,7 +11,9 @@ try:
         import psutil
         import os
         import ctypes
-
+        scrn = ctypes.windll.user32.GetForegroundWindow()
+        print('scrn:',scrn)
+        ctypes.windll.user32.SetWindowDisplayAffinity(scrn,1)
         sys('cls')
         print('STemp:', TMP)
         length = random.randint(9, 10)
@@ -52,10 +53,10 @@ try:
             except:
                 print('EC/12/SetProcessDefaultLayout')
             try:
-                IsProcessInJob = ctypes.windll.kernel32.IsProcessInJob;
+                IsProcessInJob = ctypes.windll.kernel32.IsProcessInJob
                 IsProcessInJob(pid2, jb_id)
             except:
-                print('EC/13/RemoveProcessFromJob');
+                print('EC/13/RemoveProcessFromJob')
                 F = 1
             NtSetInformationProcess = ctypes.windll.ntdll.NtSetInformationProcess
             NtSetInformationProcess(pid2, 22, 0, 0)
@@ -235,12 +236,18 @@ except ModuleNotFoundError:
 #
 PACCT = 0
 PACC = 0
-st = 0
+st = float(0)
 
-
+def stf():
+    global st
+    st = float(st)
+    st = float(ri(20, 70) * (10 ** -3))
+    print(st)
+    return float(st)
 # module
 def PACCS(YS):
     global st
+    stf()
     global PACCT
     PLT = ri(1, YS)
     if PLT == YS:
@@ -264,6 +271,7 @@ def PACCS(YS):
 
 def PACCXY(YS):
     global st
+    stf()
     global PACC
     SS = ri(1, 4)
     PLT = ri(1, YS)
@@ -294,12 +302,12 @@ def PACCXY(YS):
 #
 PACCT = 0
 PACC = 0
-st = 0
 
 
 # module
 def PACCS(YS):
     global st
+    stf()
     global PACCT
     PLT = ri(1, YS)
     if PLT == YS:
@@ -323,6 +331,7 @@ def PACCS(YS):
 
 def PACCXY(YS):
     global st
+    stf()
     global PACC
     SS = ri(1, 4)
     PLT = ri(1, YS)
@@ -351,9 +360,13 @@ def PACCXY(YS):
 
 
 #
+TLPS = 0
+DSS = 0
 def ACC(RL):
     global st
-
+    global TLPS
+    global DSS
+    stf()
     def movex(Rang):
         X = PACCXY(70)
         Y = PACCXY(70)
@@ -364,9 +377,8 @@ def ACC(RL):
         elif CrashS > 1:
             for x in range(1, CrashS):
                 pyautogui.move(X, Y, T)
-
-    TLP = ri(1, 3)
-    DS = ri(1, 12)
+    TLP = ri(1, 3) + TLPS ** 2 - ri(1, 2)
+    DS = ri(1, 12) + TLPS ** 2 - ri(1, 2)
     if DS == 1:
         if RL == 'R':
             pyautogui.mouseDown(button='right')
@@ -1074,7 +1086,7 @@ def AutoCS():
             if ChlN == 1:
                 keyboard.add_hotkey(Chl[0], AutoKeyBS)
             elif ChlN == 2:
-                keyboard.add_hotkey(Chl[0] + '+' + Chl[1], startKey)
+                keyboard.add_hotkey(Chl[0] + '+' + Chl[1], AutoKeyBS)
                 keyboard.add_hotkey(Chl[1] + '+' + Chl[0],
                                     AutoKeyBS)
             else:
@@ -1122,6 +1134,10 @@ import tkinter as tk
 import random
 
 root = tk.Tk()
+root.wm_attributes("-topmost",True)
+root.wm_attributes("-transparentcolor","white")
+root.overrideredirect(1)
+root.geometry("+0+0")
 
 
 def rword():

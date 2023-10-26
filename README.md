@@ -18,7 +18,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] Beginning of the project
 - [ ] Bypass detect
 - [X] Isolated process
-- [ ] MeX
+- [ ] MemoryEdit
 
 ### Main
 - [X] GUI
@@ -26,7 +26,6 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer
-- [ ] Random file name
 - [ ] Custom script
 - [X] Internal Terminal
 - [X] PyInstaller

@@ -13,7 +13,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Sync PAW
 - [X] AlgorithmX²
 - [X] Keyboard support
-- [ ] Keyboard custom delay
+- [X] Keyboard custom delay
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

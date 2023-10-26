@@ -13,7 +13,9 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Sync PAW
 - [X] AlgorithmX²
 - [X] Keyboard support
+- [ ] Full keyboard support
 - [X] Keyboard custom delay
+-    A different delay of keyboard if not set for all keys, can most likely cause detection
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

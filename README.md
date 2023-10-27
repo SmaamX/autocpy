@@ -26,7 +26,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 ### Algorithm
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
-- [ ] Neural Network
+- [ ] GNetwork
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

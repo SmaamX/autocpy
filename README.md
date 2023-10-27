@@ -15,6 +15,14 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] Keyboard support
 - [X] Keyboard custom delay
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
+### AutoAim (OpenCV) [Default module]
+- [ ] Beginning of the project
+- [ ] Import sample images
+- [ ] Import multi sample images
+- [ ] Random aim speed / wave
+- [ ] Random aim shake / speed / wave
+- [ ] Sync shake / speed / wave
+- [ ] Random locker
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

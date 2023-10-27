@@ -46,7 +46,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] PyInstaller
 
 ### Main objective
-+ Fireless algorithms [AutoClicker]
++ Fireless algorithms [Global]
 - [ ] Final version
 
 # Pay attention

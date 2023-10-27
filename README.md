@@ -28,6 +28,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Bypass detect
 - [X] Isolated process
 - [ ] MemoryEdit
+- [ ] Sandbox
 
 ### Main
 - [X] GUI

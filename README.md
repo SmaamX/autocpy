@@ -11,7 +11,6 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] Right click
 - [X] Press and wait
 - [ ] Sync PAW
-- [X] AlgorithmX²
 - [X] Keyboard support
 - [X] Keyboard custom delay
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
@@ -24,6 +23,9 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Sync shake / speed / wave
 - [ ] Random locker
 - [ ] Auto image detector
+### Algorithm
+- [X] AlgorithmX²
+- [ ] AlgorithmX³
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

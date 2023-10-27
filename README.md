@@ -23,6 +23,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [ ] Random aim shake / speed / wave
 - [ ] Sync shake / speed / wave
 - [ ] Random locker
+- [ ] Auto image detector
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

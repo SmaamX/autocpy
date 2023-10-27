@@ -27,7 +27,8 @@ Macro but with some neural randomization, You can use it for anything, to increa
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer
-- [ ] Custom script
+- [X] Custom script
+- [ ] Script manager
 - [X] Internal Terminal
 - [X] PyInstaller
 

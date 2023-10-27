@@ -26,6 +26,7 @@ Macro but with some neural randomization, You can use it for anything, to increa
 ### Algorithm
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
+- [ ] Natural network
 ### Memory editor
 - [X] Beginning of the project
 - [ ] Bypass detect

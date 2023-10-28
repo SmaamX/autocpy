@@ -4,6 +4,7 @@ from sys import argv
 import os
 import random
 import string
+import pynput
 try:
     if __name__ == '__main__':
         import os
@@ -542,9 +543,9 @@ def AutoCS():
     global leftCL
     global rightCL
     global h2
+    global fini
     sys('cls')
     try:
-        global fini
         if fini == 12: print('Ena:True')
     except:
         print('Ena:False')
@@ -688,8 +689,9 @@ def AutoCS():
                 st1 = std(0, 1, 60)
             # color('STD:'+str(st1),2)
             sl(p)
-            if keyboard.is_pressed(leftCL):
-                ACC('L')
+            if leftCL != 'X':
+                if keyboard.is_pressed(leftCL):
+                    ACC('L')
 
         #
         def start2():
@@ -708,8 +710,9 @@ def AutoCS():
             else:
                 st = std(0, 1, 40)
             sl(p)
-            if keyboard.is_pressed(rightCL):
-                ACC('R')
+            if rightCL != 'y':
+                if keyboard.is_pressed(rightCL):
+                    ACC('R')
 
         def on_start_pressed():
             start()
@@ -818,7 +821,7 @@ def AutoCS():
         while True:
             color('KeyMap editor', 2)
             try:
-                keymap = int(input('1.Minecraft\n2.Custom\n'))
+                keymap = int(input('1.Minecraft\n2.Custom\n3.Button\n'))
             except:
                 keymap = 0
             if keymap == 1:
@@ -837,7 +840,6 @@ def AutoCS():
                 break
             elif keymap == 2:
                 sys('cls')
-
                 # 0 and ckeymapR just for r and f key if 1 just 1 key = [0]
                 def godkey(ckeymap):
                     global leftCL
@@ -982,6 +984,19 @@ def AutoCS():
                     break
                 elif ERR == True:
                     pass
+            if keymap == 3:
+                from threading import Thread
+                from pynput import mouse
+                def on_click(x, y, button, pressedx):
+                    def clickx(button,pressedx):
+                        global leftCL
+                        global rightCL
+                        if str(button) == 'Button.left':leftCL='x';on_start_pressed()
+                        elif str(button) == 'Button.right':rightCL='y';on_start2_pressed()
+                    for i in range(ri(3,6)):
+                        clickx(button,pressedx)
+                with mouse.Listener(on_click=on_click) as listner:
+                    listner.join()
             else:
                 color('Bad input', 1)
         if fini == 12:

@@ -4,6 +4,8 @@ from sys import argv
 import os
 import random
 import string
+
+import mouseinfo
 import pynput
 try:
     if __name__ == '__main__':
@@ -689,9 +691,16 @@ def AutoCS():
                 st1 = std(0, 1, 60)
             # color('STD:'+str(st1),2)
             sl(p)
-            if leftCL != 'X':
+            try:
+                if leftCL != None:
+                    pass
+            except:
+                leftCL = None
+            if leftCL != None:
                 if keyboard.is_pressed(leftCL):
                     ACC('L')
+            else:
+                ACC('L')
 
         #
         def start2():
@@ -710,9 +719,17 @@ def AutoCS():
             else:
                 st = std(0, 1, 40)
             sl(p)
-            if rightCL != 'y':
+            try:
+                if rightCL != None:
+                    pass
+            except:
+                rightCL = None
+            if rightCL != None:
                 if keyboard.is_pressed(rightCL):
                     ACC('R')
+            else:
+                ACC('R')
+
 
         def on_start_pressed():
             start()
@@ -821,7 +838,7 @@ def AutoCS():
         while True:
             color('KeyMap editor', 2)
             try:
-                keymap = int(input('1.Minecraft\n2.Custom\n3.Button\n'))
+                keymap = int(input('1.Minecraft\n2.Custom\n3.Button[Beta]\n'))
             except:
                 keymap = 0
             if keymap == 1:
@@ -985,18 +1002,34 @@ def AutoCS():
                 elif ERR == True:
                     pass
             if keymap == 3:
-                from threading import Thread
-                from pynput import mouse
-                def on_click(x, y, button, pressedx):
-                    def clickx(button,pressedx):
-                        global leftCL
-                        global rightCL
-                        if str(button) == 'Button.left':leftCL='x';on_start_pressed()
-                        elif str(button) == 'Button.right':rightCL='y';on_start2_pressed()
-                    for i in range(ri(3,6)):
-                        clickx(button,pressedx)
-                with mouse.Listener(on_click=on_click) as listner:
-                    listner.join()
+                def Dclick():
+                    from threading import Thread
+                    global leftCL
+                    global rightCL
+                    lr = input('L or R -> ')
+                    if lr == 'R' or lr == 'r':
+                        while True:
+                            if ctypes.windll.user32.GetAsyncKeyState(0x1) > 1:
+                                t = Thread(target=on_start_pressed)
+                                t.start()
+                                t.join()
+                            elif ctypes.windll.user32.GetAsyncKeyState(0x2) > 1:
+                                t = Thread(target=on_start_pressed)
+                                t.start()
+                                t.join()
+                    if lr == 'L' or lr == 'l':
+                        while True:
+                            if ctypes.windll.user32.GetAsyncKeyState(0x1) > 1:
+                                t = Thread(target=on_start2_pressed)
+                                t.start()
+                                t.join()
+                            elif ctypes.windll.user32.GetAsyncKeyState(0x2) > 1:
+                                t = Thread(target=on_start2_pressed)
+                                t.start()
+                                t.join()
+
+                Dclick()
+                #my bullshit method
             else:
                 color('Bad input', 1)
         if fini == 12:

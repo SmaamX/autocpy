@@ -44,7 +44,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [ ] Script manager
 - [X] Internal Terminal
 - [X] PyInstaller
-- [X] Button support
+- [X] Button support (One)
 
 ### Main objective
 + Fireless algorithms [Global]

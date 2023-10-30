@@ -42,7 +42,6 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Process spoofer
 - [X] Custom script
 - [ ] Script manager
-- [X] Internal Terminal
 - [X] PyInstaller
 - [X] Button support (One)
 

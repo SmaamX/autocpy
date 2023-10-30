@@ -13,7 +13,6 @@ try:
         import random
         import string
         import tempfile
-        import string
         import random
         import sys as si
         TMP = tempfile.gettempdir() + "\\" + ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
@@ -33,6 +32,28 @@ try:
         pid = os.getpid()
         print('PID:', pid)
         try:
+            import os
+
+            kernel32 = ctypes.WinDLL("kernel32.dll")
+
+            program_path = os.path.abspath(__file__)
+
+            file_handle = kernel32.CreateFileW(
+                program_path,
+                ctypes.c_uint32(0x40000000),
+                ctypes.c_uint32(0),
+                None,
+                ctypes.c_uint32(3),
+                ctypes.c_uint32(128),
+                None
+            )
+
+            kernel32.SetFileAttributesW(file_handle, 0x80000000)
+            kernel32.CloseHandle(file_handle)
+            print("SignSpoofed")
+        except:
+            pass
+        try:
             print('[FucHide]')
             han = ctypes.windll.kernel32.GetModuleHandleW(None)
             ctypes.windll.kernel32.SetProcessWorkingSetSizeEx(han, -1, -1, 0x100)
@@ -43,7 +64,11 @@ try:
             p = psutil.Process(pid)
             p.nice(psutil.HIGH_PRIORITY_CLASS)
             import ctypes
-
+            kernel32 = ctypes.WinDLL('kernel32',use_last_error=True)
+            getproc =kernel32.GetCurrentProcess()
+            procid = kernel32.GetProcessId(getproc)
+            prohan = kernel32.OpenProcess(0x1F0FFF,False,procid)
+            kernel32.SetHandleInformation(prohan)
             #
             PROCESS_ALL_ACCESS = 0x1F0FFF
             PROCESS_QUERY_INFORMATION = 0x0400
@@ -564,8 +589,8 @@ def AutoCS():
     #
     color('START', 3)
     color('R.I.P Technoblade', 2)
-    LBM = input('Jitter (Y/N):')
-    LBM = True if any(x.lower() in ['y', 'yes'] for x in LBM) else False
+    LBM = input('Jitter D:Y (Y/N):')
+    LBM = False if any(x.lower() in ['y', 'yes'] for x in LBM) else True
     if LBM == True:
         color('ON', 2)
     else:
@@ -680,9 +705,9 @@ def AutoCS():
             global LBM
             global st
             cooldown(40, 50)
-            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, 4, 10, 11, 55, 2, 10, 20, 21, 9, 11, 25, 26,
-                      h1)
-            #                    #
+            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, 3, 12, 25, 26, 7, 21, 22, 24, 12, 24, 25, 26,
+                      h2)
+                                                                                                                                       #                                                                     #
             h1 = p
             p = p * 10 ** -3
             if LBM == True:
@@ -858,7 +883,7 @@ def AutoCS():
             elif keymap == 2:
                 sys('cls')
                 # 0 and ckeymapR just for r and f key if 1 just 1 key = [0]
-                def godkey(ckeymap):
+                def godkey(ckeymap,ons1=on_start_pressed,ons2=on_start2_pressed):
                     global leftCL
                     global rightCL
                     global skey
@@ -871,90 +896,90 @@ def AutoCS():
                         ckeymapA = len(ckeymap)
                         if ckeymapA > 1: ckeymapS = ckeymap[-1];ckeymap.remove(ckeymap[-1]);print('stop key=',
                                                                                                   'Ctrl' + '+' + ckeymapS);skey = ckeymapS;keyboard.add_hotkey(
-                            'ctrl' + '+' + ckeymapS, on_stop_pressed)
+                            'ctrl' + '+' + ckeymapS, ons1)
                         print('Keys:', ckeymap)
                         ckeymapN = len(ckeymap)
                         if ckeymapN == 1:
-                            keyboard.add_hotkey(ckeymap[0], on_start_pressed)
+                            keyboard.add_hotkey(ckeymap[0], ons1)
                         elif ckeymapN == 2:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], 'F6', 'F7', 'F8', 'F9', 'F10',
-                                   'F11', 'F12', on_start_pressed)
+                                   'F11', 'F12', ons1)
                             tomkey(
                                 ckeymap[1], 'F6', 'F7', 'F8', 'F9', 'F10', 'F12', 'F11',
                                 on_start2_pressed)
                             keyboard.add_hotkey(ckeymap[0],
-                                                on_start_pressed)
+                                                ons1)
                             keyboard.add_hotkey(ckeymap[1],
-                                                on_start2_pressed)
+                                                ons2)
                         elif ckeymapN == 3:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], 'F7', 'F8', 'F9',
                                    'F10', 'F11', 'F12',
-                                   on_start_pressed)
+                                   ons1)
                             tomkey(ckeymap[1],
                                    ckeymap[2], 'F7',
                                    'F8', 'F9', 'F10',
                                    'F12', 'F11',
-                                   on_start2_pressed)
+                                   ons2)
                             keyboard.add_hotkey(
-                                ckeymap[0], on_start_pressed)
-                            keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                                ckeymap[0], ons1)
+                            keyboard.add_hotkey(ckeymap[1], ons2)
                         elif ckeymapN == 4:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], ckeymap[3], 'F8',
                                    'F9', 'F10', 'F11', 'F12',
-                                   on_start_pressed)
+                                   ons1)
                             tomkey(ckeymap[1],
                                    ckeymap[2],
                                    ckeymap[3], 'F8',
                                    'F9', 'F10', 'F12',
                                    'F11',
-                                   on_start2_pressed)
+                                   ons2)
                             keyboard.add_hotkey(
-                                ckeymap[0], on_start_pressed)
-                            keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                                ckeymap[0], ons1)
+                            keyboard.add_hotkey(ckeymap[1], ons2)
                         elif ckeymapN == 5:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], ckeymap[3],
                                    ckeymap[4], 'F9', 'F10', 'F11', 'F12',
-                                   on_start_pressed)
+                                   ons1)
                             tomkey(ckeymap[1],
                                    ckeymap[2],
                                    ckeymap[3],
                                    ckeymap[4], 'F9',
                                    'F10', 'F12',
                                    'F11',
-                                   on_start2_pressed)
+                                   ons2)
                             keyboard.add_hotkey(
-                                ckeymap[0], on_start_pressed)
-                            keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                                ckeymap[0], ons1)
+                            keyboard.add_hotkey(ckeymap[1], ons2)
                         elif ckeymapN == 6:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], ckeymap[3],
                                    ckeymap[4], ckeymap[5], 'F10', 'F11', 'F12',
-                                   on_start_pressed)
+                                   ons1)
                             tomkey(ckeymap[1],
                                    ckeymap[2],
                                    ckeymap[3],
                                    ckeymap[4],
                                    ckeymap[5], 'F10',
                                    'F12', 'F11',
-                                   on_start2_pressed)
+                                   ons2)
                             keyboard.add_hotkey(
-                                ckeymap[0], on_start_pressed)
-                            keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                                ckeymap[0], ons1)
+                            keyboard.add_hotkey(ckeymap[1], ons2)
                         elif ckeymapN == 7:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], ckeymap[3],
                                    ckeymap[4], ckeymap[5], ckeymap[6], 'F11',
-                                   'F12', on_start_pressed)
+                                   'F12', ons1)
                             tomkey(ckeymap[1],
                                    ckeymap[2],
                                    ckeymap[3],
@@ -963,23 +988,23 @@ def AutoCS():
                                    ckeymap[6],
                                    'F12',
                                    'F11',
-                                   on_start2_pressed)
+                                   ons2)
                             keyboard.add_hotkey(
-                                ckeymap[0], on_start_pressed)
-                            keyboard.add_hotkey(ckeymap[1], on_start2_pressed)
+                                ckeymap[0], ons1)
+                            keyboard.add_hotkey(ckeymap[1], ons2)
                         elif ckeymapN == 8:
                             leftCL = ckeymap[0]
                             rightCL = ckeymap[1]
                             tomkey(ckeymap[0], ckeymap[2], ckeymap[3],
                                    ckeymap[4], ckeymap[5], ckeymap[6],
-                                   ckeymap[7], 'F11', on_start_pressed)
+                                   ckeymap[7], 'F11', ons1)
                             tomkey(
                                 ckeymap[1], ckeymap[2], ckeymap[3], ckeymap[4], ckeymap[5], ckeymap[6], ckeymap[7],
-                                'F11', on_start2_pressed)
+                                'F11', ons2)
                             keyboard.add_hotkey(ckeymap[0],
-                                                on_start_pressed)
+                                                ons1)
                             keyboard.add_hotkey(
-                                ckeymap[1], on_start2_pressed)
+                                ckeymap[1], ons2)
                         elif ckeymapN > 8:
                             color('Error/Above', 1)
                             ERR = True
@@ -1007,7 +1032,7 @@ def AutoCS():
                     global leftCL
                     global rightCL
                     lr = input('L or R -> ')
-                    if lr == 'R' or lr == 'r':
+                    if lr == 'L' or lr == 'l':
                         while True:
                             if ctypes.windll.user32.GetAsyncKeyState(0x1) > 1:
                                 t = Thread(target=on_start_pressed)
@@ -1017,7 +1042,7 @@ def AutoCS():
                                 t = Thread(target=on_start_pressed)
                                 t.start()
                                 t.join()
-                    if lr == 'L' or lr == 'l':
+                    if lr == 'R' or lr == 'r':
                         while True:
                             if ctypes.windll.user32.GetAsyncKeyState(0x1) > 1:
                                 t = Thread(target=on_start2_pressed)
@@ -1186,11 +1211,91 @@ def AutoCS():
         keyboard.wait()
     except KeyboardInterrupt:
         print('ForceStop')
-
-
 #################TermPy_conf#################
+import keyboard
+import threading
+def fixkey(x, y, rt):
+    keyboard.add_hotkey(x + '+' + y, rt)
+    keyboard.add_hotkey(y + '+' + x, rt)
+
+#
+def fixkey3(x, y, z, rt):
+    keyboard.add_hotkey(x + '+' + y + '+' + z, rt)
+    keyboard.add_hotkey(z + '+' + x + '+' + y, rt)
+    keyboard.add_hotkey(x + '+' + z + '+' + y, rt)
+    keyboard.add_hotkey(y + '+' + x + '+' + z, rt)
+    keyboard.add_hotkey(z + '+' + y + '+' + x, rt)
+    keyboard.add_hotkey(y + '+' + z + '+' + x, rt)
+
+#
+def fixkey4(x, y, z, s, rt):
+    keyboard.add_hotkey(x + '+' + y + '+' + z + '+' + s, rt)
+    keyboard.add_hotkey(x + '+' + y + '+' + s + '+' + z, rt)
+    keyboard.add_hotkey(x + '+' + s + '+' + y + '+' + z, rt)
+    keyboard.add_hotkey(s + '+' + x + '+' + y + '+' + z, rt)
+    keyboard.add_hotkey(z + '+' + x + '+' + y + '+' + s, rt)
+    keyboard.add_hotkey(z + '+' + x + '+' + s + '+' + y, rt)
+    keyboard.add_hotkey(z + '+' + s + '+' + x + '+' + y, rt)
+    keyboard.add_hotkey(s + '+' + z + '+' + x + '+' + y, rt)
+    keyboard.add_hotkey(x + '+' + z + '+' + y + '+' + s, rt)
+    keyboard.add_hotkey(x + '+' + z + '+' + s + '+' + y, rt)
+    keyboard.add_hotkey(x + '+' + s + '+' + z + '+' + y, rt)
+    keyboard.add_hotkey(s + '+' + x + '+' + z + '+' + y, rt)
+    keyboard.add_hotkey(y + '+' + x + '+' + z + '+' + s, rt)
+    keyboard.add_hotkey(y + '+' + x + '+' + s + '+' + z, rt)
+    keyboard.add_hotkey(y + '+' + s + '+' + x + '+' + z, rt)
+    keyboard.add_hotkey(s + '+' + y + '+' + x + '+' + z, rt)
+    keyboard.add_hotkey(z + '+' + y + '+' + x + '+' + s, rt)
+    keyboard.add_hotkey(z + '+' + y + '+' + s + '+' + x, rt)
+    keyboard.add_hotkey(z + '+' + s + '+' + y + '+' + x, rt)
+    keyboard.add_hotkey(s + '+' + z + '+' + y + '+' + x, rt)
+    keyboard.add_hotkey(y + '+' + z + '+' + x + '+' + s, rt)
+    keyboard.add_hotkey(y + '+' + z + '+' + s + '+' + x, rt)
+    keyboard.add_hotkey(y + '+' + s + '+' + z + '+' + x, rt)
+    keyboard.add_hotkey(s + '+' + y + '+' + z + '+' + x, rt)
+
+#
+def fixkey5(x, r, s, rt):
+    keyboard.add_hotkey(x + '+' + r + '+' + s, rt)
+    keyboard.add_hotkey(s + '+' + x + '+' + r, rt)
+    keyboard.add_hotkey(x + '+' + s + '+' + r, rt)
+    keyboard.add_hotkey(r + '+' + x + '+' + s, rt)
+    keyboard.add_hotkey(s + '+' + r + '+' + x, rt)
+    keyboard.add_hotkey(r + '+' + s + '+' + x, rt)
+
+#
+def mkey(x, y, z, a, r, s, rt):
+    fixkey(x, r, rt)
+    fixkey(y, r, rt)
+    fixkey(a, r, rt)
+    fixkey(z, r, rt)
+    fixkey(s, r, rt)
+    fixkey3(x, y, r, rt)
+    fixkey3(x, a, r, rt)
+    fixkey3(x, z, r, rt)
+    fixkey3(y, z, r, rt)
+    fixkey3(y, a, r, rt)
+    fixkey3(a, z, r, rt)
+    fixkey5(x, r, s, rt)
+    fixkey5(y, r, s, rt)
+    fixkey5(z, r, s, rt)
+    fixkey5(a, r, s, rt)
+    fixkey4(x, y, r, s, rt)
+    fixkey4(x, a, r, s, rt)
+    fixkey4(x, z, r, s, rt)
+    fixkey4(y, z, r, s, rt)
+    fixkey4(y, a, r, s, rt)
+    fixkey4(a, z, r, s, rt)
+
+def tomkey(x, y, z, a, r, s, c, sh, rt):
+    mkey(x, y, z, a, r, s, rt)
+    mkey(x, y, z, c, r, s, rt)
+    mkey(x, y, z, a, r, c, rt)
+    mkey(x, y, z, sh, r, s, rt)
+    mkey(x, y, z, a, r, sh, rt)
 def TermPyS():
-    sys('cls')
+    from os import system as sis
+    sis('cls')
     color('CCETermPy 1.2', 2)
     script = input('Script file address (use /) -> ')
     try:
@@ -1199,7 +1304,6 @@ def TermPyS():
     except:
         print('ECode/1')
     exec(scrx)
-    input('Press enter to exit ...')
 #################inp.Mcq_conf#################
 ##############################################
 # GUI

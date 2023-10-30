@@ -31,7 +31,9 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Beginning of the project
 - [ ] Bypass detect
 - [X] Isolated process
-- [ ] MemoryEdit
+- [ ] Memory editor
+- [ ] Hardware click
+- [ ] HWID spoofer
 - [ ] Sandbox
 
 ### Main

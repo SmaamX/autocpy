@@ -13,8 +13,8 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [ ] Sync PAW
 - [X] Keyboard support
 - [X] Keyboard custom delay
-- [X] Button support (One)
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
+- [X] Button support (One)
 ### AutoAim (OpenCV) [Default module]
 - [ ] Beginning of the project
 - [ ] Import sample images

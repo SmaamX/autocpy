@@ -34,7 +34,6 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Isolated process
 - [X] Injector
 - [ ] Memory editor
-- [ ] Hardware click
 - [ ] HWID spoofer
 - [ ] Sandbox
 

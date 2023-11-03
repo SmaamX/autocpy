@@ -44,7 +44,6 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Hide process
 - [X] Process spoofer
 - [X] Custom script
-- [ ] Script manager
 - [X] PyInstaller
 
 ## Main objective

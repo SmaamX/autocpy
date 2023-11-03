@@ -37,7 +37,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [ ] HWID spoofer
 - [ ] Sandbox
 
-### Main
+## Main
 - [X] GUI
 - [ ] Full GUI
 - [X] CLI

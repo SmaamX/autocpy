@@ -48,7 +48,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] PyInstaller
 - [X] Button support (One)
 
-### Main objective
+## Main objective
 + Fireless algorithms [Global]
 - [ ] Final version
 

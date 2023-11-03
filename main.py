@@ -1,4 +1,3 @@
-# PyCPS Beta
 from os import system as sys
 from sys import argv
 import os
@@ -300,9 +299,7 @@ def color(x, C):
         print(x)
 
 #Bruh
-color('█─▄▄▄─█▄─▄███▄─▄█─▄▄▄─█▄─█─▄███▄─▄▄─█▄─▀█▄─▄█─▄▄▄▄█▄─▄█▄─▀█▄─▄█▄─▄▄─█',random.randint(1,3))
-color('█─███▀██─██▀██─██─███▀██─▄▀█████─▄█▀██─█▄▀─██─██▄─██─███─█▄▀─███─▄█▀█',random.randint(1,3))
-color('▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▄▀',random.randint(1,3))
+color('           _                  __            _            ',random.randint(1,3));color('  /\  /\___| |_ __   ___ _ __ /__\ __   __ _(_)_ __   ___ ',random.randint(1,3));color(' / /_/ / _ \ | '_ \ / _ \ '__/_\| '_ \ / _` | | '_ \ / _ \',random.randint(1,3));color('/ __  /  __/ | |_) |  __/ | //__| | | | (_| | | | | |  __/',random.randint(1,3));color('\/ /_/ \___|_| .__/ \___|_| \__/|_| |_|\__, |_|_| |_|\___|',random.randint(1,3));color('             |_|                       |___/              ',random.randint(1,3))
 
 #
 from random import randint as ri

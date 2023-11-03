@@ -1,6 +1,6 @@
 # What is this
 Macro but with some neural randomization, You can use it for anything, for example increase your click in sec (CPS) or set custom macro in minecraft or any other game or memory editor and etc.
-## Capabilities
+## Modules
 ### AutoClicker [Default module]
 - [X] Shake
 - [X] 4X Shake

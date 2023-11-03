@@ -22,7 +22,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [ ] Random aim speed / wave
 - [ ] Random aim shake / speed / wave
 - [ ] Sync shake / speed / wave
-- [ ] Random locker
+- [ ] Random LockBox
 - [ ] Auto image detector
 ### Algorithm
 - [X] AlgorithmX²

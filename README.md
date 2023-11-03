@@ -33,7 +33,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Bypass detect
 - [X] Isolated process
 - [X] Injector
-- [ ] Memory editor
+- [X] Memory editor
 - [ ] HWID spoofer
 - [ ] Sandbox
 

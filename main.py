@@ -299,9 +299,9 @@ def color(x, C):
         print(x)
 
 #Bruh
-color('           _                  __            _            ',random.randint(1,3));color('  /\  /\___| |_ __   ___ _ __ /__\ __   __ _(_)_ __   ___ ',random.randint(1,3));color(' / /_/ / _ \ | '_ \ / _ \ '__/_\| '_ \ / _` | | '_ \ / _ \',random.randint(1,3));color('/ __  /  __/ | |_) |  __/ | //__| | | | (_| | | | | |  __/',random.randint(1,3));color('\/ /_/ \___|_| .__/ \___|_| \__/|_| |_|\__, |_|_| |_|\___|',random.randint(1,3));color('             |_|                       |___/              ',random.randint(1,3))
+color('HelperEngine',random.randint(1,3))
 
-#
+
 from random import randint as ri
 from time import sleep as sl
 
@@ -1250,6 +1250,23 @@ def AutoCS():
     except KeyboardInterrupt:
         print('ForceStop')
 #################TermPy_conf#################
+## memory editor 1.0
+from ReadWriteMemory import ReadWriteMemory
+def wr1(proc,addre,val):
+    rwm = ReadWriteMemory()
+    process = rwm.get_process_by_name(proc)
+    process.open()
+    tb=process.read(addre)
+    t=process.write(addre,val)
+    ta=process.read(addre)
+    return [tb,ta]
+def re1(proc,addre):
+    rwm = ReadWriteMemory()
+    process = rwm.get_process_by_name(proc)
+    process.open()
+    tb=process.read(addre)
+    return [tb]
+## hotkey
 import keyboard
 import threading
 def fixkey(x, y, rt):
@@ -1335,7 +1352,7 @@ def TermPyS():
     from os import system as sis
     sis('cls')
     color('CCETermPy 1.2', 2)
-    script = input('Script file address (use /) -> ')
+    script = input('Script file address (use /) (Give admin access to run memory editor correctly) -> ')
     try:
         with open(script) as f:
             scrx = f.read()

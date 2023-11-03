@@ -1251,21 +1251,23 @@ def AutoCS():
         print('ForceStop')
 #################TermPy_conf#################
 ## memory editor 1.0
-from ReadWriteMemory import ReadWriteMemory
-def wr1(proc,addre,val):
-    rwm = ReadWriteMemory()
-    process = rwm.get_process_by_name(proc)
-    process.open()
-    tb=process.read(addre)
-    t=process.write(addre,val)
-    ta=process.read(addre)
-    return [tb,ta]
-def re1(proc,addre):
-    rwm = ReadWriteMemory()
-    process = rwm.get_process_by_name(proc)
-    process.open()
-    tb=process.read(addre)
-    return [tb]
+import pymem
+def wr1(proc,addre,val,type):
+    import pymem
+    mem = pymem.memory
+    mex = pymem.Pymem(proc)
+    mexd = mex.process_handle
+    type=str(type);mexd=str(mexd);addre=str(addre);val=str(val)
+    r='mem.write_'+type+'('+mexd+', '+addre+', '+val+')';eval(r)
+def re1(proc,addre,val,type):
+    import pymem
+    mem = pymem.memory
+    mex = pymem.Pymem(proc)
+    mexd = mex.process_handle
+    type = str(type);mexd = str(mexd);addre = str(addre);val = str(val)
+    r='s=mem.read_'+type+'('+mexd+', '+addre+', '+val+')';eval(r)
+    return s
+# ex -> wr1('Tutorial-x86_64.exe',0x01571478,100,'int')
 ## hotkey
 import keyboard
 import threading

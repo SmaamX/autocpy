@@ -13,6 +13,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [ ] Sync PAW
 - [X] Keyboard support
 - [X] Keyboard custom delay
+- [X] Button support (One)
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
 ### AutoAim (OpenCV) [Default module]
 - [ ] Beginning of the project
@@ -46,7 +47,6 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] Custom script
 - [ ] Script manager
 - [X] PyInstaller
-- [X] Button support (One)
 
 ## Main objective
 + Fireless algorithms [Global]

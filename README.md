@@ -27,7 +27,7 @@ Macro but with some neural randomization, You can use it for anything, for examp
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
 - [ ] GNetwork
-### Memory editor
+### Memory editor [Default module]
 - [X] Beginning of the project
 - [X] Bypass detect
 - [X] Isolated process

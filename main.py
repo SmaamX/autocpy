@@ -298,8 +298,7 @@ def color(x, C):
     except ModuleNotFoundError:
         print(x)
 
-#Bruh
-color('HelperEngine',random.randint(1,3))
+color('PyKernel32',random.randint(1,3))
 
 
 from random import randint as ri

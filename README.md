@@ -1,3 +1,4 @@
+![icon](https://github.com/SmaamX/PyKernel32/assets/90418723/d700b481-5158-43f1-88bd-62f5535cdbcd) => PyKernel32
 # What is this
 A flexible script manager for anything
 ## Modules

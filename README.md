@@ -46,7 +46,7 @@ A flexible script manager for anything
 - [X] Process spoofer
 - [X] Custom script
 - [ ] Script injector
-- [ ] Dll injector
+- [ ] DLL injector
 - [X] PyInstaller
 
 ## Main objective

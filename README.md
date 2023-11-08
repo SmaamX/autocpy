@@ -45,6 +45,7 @@ A flexible script manager for anything
 - [X] Hide process
 - [X] Process spoofer
 - [X] Custom script
+- [ ] Script hider
 - [X] PyInstaller
 
 ## Main objective

@@ -48,6 +48,7 @@ A flexible script manager for anything
 - [X] Custom script
 - [ ] Script injector
 - [ ] DLL injector
+- [ ] Screen reader protection
 - [X] PyInstaller
 
 ## Main objective

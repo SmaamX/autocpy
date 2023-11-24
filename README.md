@@ -28,7 +28,6 @@ A flexible script manager for anything
 ### Algorithm
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
-+ => Haskell
 - [ ] GNetwork
 ### Memory editor [Default module]
 - [X] Beginning of the project

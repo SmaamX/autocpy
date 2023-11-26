@@ -26,8 +26,48 @@ try:
         try:
             import ctypes
             import random
-
-
+            ntdll = ctypes.WinDLL("ntdll.dll")
+            ntdll.NtQueryInformationProcess.restype = ctypes.c_int
+            ntdll.NtQueryInformationProcess.argtypes = [ctypes.c_void_p, ctypes.c_uint, ctypes.c_void_p, ctypes.c_uint,
+                                                        ctypes.POINTER(ctypes.c_uint)]
+            def NtQueryInformationProcess(processHandle, processInformationClass, processInformation,
+                                          processInformationLength, returnLength):
+                return 0
+            ntdll.NtQueryObject.restype = ctypes.c_int
+            ntdll.NtQueryObject.argtypes = [ctypes.c_void_p, ctypes.c_uint, ctypes.c_void_p, ctypes.c_ulong,
+                                            ctypes.POINTER(ctypes.c_ulong)]
+            def NtQueryObject(objectHandle, objectInformationClass, objectInformation, objectInformationLength,
+                              returnLength):
+                return 0
+            try:
+                ntdll.NtQuerySessionInformation.restype = ctypes.c_int
+                ntdll.NtQuerySessionInformation.argtypes = [ctypes.c_ulong, ctypes.c_uint, ctypes.c_void_p,
+                                                            ctypes.c_ulong, ctypes.POINTER(ctypes.c_ulong)]
+                def NtQuerySessionInformation(sessionId, sessionInformationClass, sessionInformation,
+                                              sessionInformationLength, returnLength):
+                    return 0
+            except:
+                print('QueSession - Fai')
+            ntdll.NtQuerySystemInformation.restype = ctypes.c_int
+            ntdll.NtQuerySystemInformation.argtypes = [ctypes.c_ulong, ctypes.c_void_p, ctypes.c_ulong,
+                                                       ctypes.POINTER(ctypes.c_ulong)]
+            def NtQuerySystemInformation(systemInformationClass, systemInformation, systemInformationLength,
+                                         returnLength):
+                return 0
+            try:
+                ntdll.PsLookupProcessByProcessId.restype = ctypes.c_int
+                ntdll.PsLookupProcessByProcessId.argtypes = [ctypes.c_void_p, ctypes.c_void_p]
+                def PsLookupProcessByProcessId(processId, process):
+                    return 0
+            except:
+                print('PsLookup - Fai')
+            try:
+                ntdll.PsGetProcessImageFileName.restype = ctypes.c_int
+                ntdll.PsGetProcessImageFileName.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_ulong]
+                def PsGetProcessImageFileName(process, imageName, imageNameSize):
+                    return 0
+            except:
+                print('PsGet - Fai')
             def inject_process():
                 target_process_id = random.randint(1000, 9999)
                 kernel32 = ctypes.WinDLL('kernel32')
@@ -61,9 +101,9 @@ try:
 
 
             inject_process()
-            print('InjectTrue')
+            print('Inject - True')
         except:
-            print('InjectFa')
+            print('Inject - Fa')
         print('STemp:', TMP)
         length = random.randint(9, 10)
         proc = ''.join(random.choices(string.ascii_lowercase, k=length))
@@ -290,15 +330,12 @@ def cleanC(a):
 
 
 def color(x, C):
-    try:
-        from colorama import Fore as fo
-        if C == 1: print(fo.RED + x)
-        if C == 2: print(fo.GREEN + x)
-        if C == 3: print(fo.BLUE + x)
-    except ModuleNotFoundError:
-        print(x)
+    if C == 1: print('\u001b[31m' + x)
+    if C == 2: print('\u001b[32m' + x)
+    if C == 3: print('\u001b[34m' + x)
 
-color('PyKernel32',random.randint(1,3))
+#Bruh
+color('PyKernel32 - Beta/CLI',random.randint(1,3))
 
 
 from random import randint as ri
@@ -1249,22 +1286,24 @@ def AutoCS():
     except KeyboardInterrupt:
         print('ForceStop')
 #################TermPy_conf#################
-## memory editor 1.0
+## memory editor 1.3
 import pymem
-def wr1(proc,addre,val,type):
+def wr1(proc,addre,val,type,l=4):
     import pymem
     mem = pymem.memory
     mex = pymem.Pymem(proc)
     mexd = mex.process_handle
-    type=str(type);mexd=str(mexd);addre=str(addre);val=str(val)
-    r='mem.write_'+type+'('+mexd+', '+addre+', '+val+')';eval(r)
-def re1(proc,addre,val,type):
+    type = str(type);mexd = str(mexd);addre = str(addre);val = str(val);l = str(l)
+    if type == 'bytes':r='mem.write_'+type+'('+mexd+', '+addre+', '+val+', '+l+')';eval(r)
+    else:r = 'mem.write_'+type+'('+mexd+','+addre+','+val+')';eval(r)
+def re1(proc,addre,val,type,l=4):
     import pymem
     mem = pymem.memory
     mex = pymem.Pymem(proc)
     mexd = mex.process_handle
-    type = str(type);mexd = str(mexd);addre = str(addre);val = str(val)
-    r='s=mem.read_'+type+'('+mexd+', '+addre+', '+val+')';eval(r)
+    type=str(type);mexd=str(mexd);addre=str(addre);val=str(val);l=str(l)
+    if type == 'bytes':r='mem.read_'+type+'('+mexd+', '+addre+', '+val+', '+l+')';eval(r)
+    else:r='mem.read_'+type+'('+mexd+', '+addre+', '+val+')';eval(r)
     return s
 # ex -> wr1('Tutorial-x86_64.exe',0x01571478,100,'int')
 ## hotkey

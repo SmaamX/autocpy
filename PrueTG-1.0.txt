@@ -1,0 +1,9 @@
+# Prue gram
+web.telegram.org##.media-inner.Sticker
+web.telegram.org##.avatar-media.Avatar__media
+web.telegram.org##.thumbnail
+||web.telegram.org/a/blank.*$image
+web.telegram.org##.emoji.custom-emoji
+web.telegram.org##.media-preview--image
+web.telegram.org##.pictogram
+

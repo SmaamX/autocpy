@@ -29,6 +29,8 @@ A flexible script manager for anything
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
 - [ ] GNetwork
+- [X] VoidGorithm (10 CPS in check but 15/17 CPMS in attack/put/macro)
+- [ ] VoidGorithm V2 (click exploit method)
 ### Memory editor [Default module]
 - [X] Beginning of the project
 - [X] Bypass detect
@@ -47,7 +49,6 @@ A flexible script manager for anything
 - [X] Process spoofer
 - [X] Custom script
 - [ ] Script injector
-- [ ] DLL injector
 - [ ] Screen reader protection
 - [X] PyInstaller
 

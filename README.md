@@ -30,7 +30,7 @@ A flexible script manager for anything
 - [ ] AlgorithmX³
 - [ ] GNetwork
 - [X] VoidGorithm (10 CPS in check but 15/17 and 21 CP(500)MS in attack/put/macro...)
-- [ ] TEI V2 (Tick exploit input (Bypass monitoring))
+- [ ] TEI (Tick exploit input (Bypass monitoring))
 ### Memory editor [Default module]
 - [X] Beginning of the project
 - [X] Bypass detect

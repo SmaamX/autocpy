@@ -25,7 +25,6 @@ A flexible script manager for anything
 - [ ] Random aim shake / speed / wave
 - [ ] Sync shake / speed / wave
 - [ ] Random LockBox
-- [ ] Auto image detector
 ### Algorithm
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
@@ -52,6 +51,8 @@ A flexible script manager for anything
 - [X] Custom script
 - [X] Script injector
 - [ ] Screen reader protection
+- [ ] Debug-side (just CLI)
+- [ ] HID attack (Android nethunter, etc.)
 - [X] PyInstaller
 - [X] Tensorflow base
 

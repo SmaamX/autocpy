@@ -1476,25 +1476,3 @@ except:
     elif vard == 3:color("Soon", 3)
     elif vard == 0:exit()
     else:color("BadINP", 3)
-
-#
-def AutoC():
-    root.destroy()
-    AutoCS()
-
-
-def AutoCPlus():
-    root.destroy()
-    global fini
-    fini = 12
-    AutoCS()
-
-
-def TermPy():
-    root.destroy()
-    TermPyS()
-
-
-def Exit():
-    root.destroy()
-    exit()

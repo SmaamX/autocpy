@@ -52,6 +52,7 @@ A flexible script manager for anything
 - [ ] Script injector
 - [ ] Screen reader protection
 - [X] PyInstaller
+- [ ] Tensorflow base
 
 ## Main objective
 + Fireless algorithms [Global]

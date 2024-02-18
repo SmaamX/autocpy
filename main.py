@@ -1292,7 +1292,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 import tensorflow as tf
 
-def adaptive_predictor(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
+def activemt(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
    if outp == None:outp = input_data.shape[1]
    input_shape = features.shape[1:]
    model = Sequential()

@@ -3,9 +3,8 @@ from sys import argv
 import os
 import random
 import string
-
-import mouseinfo
-import pynput
+try:import pynput
+except:pynp=False
 try:
     if __name__ == '__main__':
         import os
@@ -342,7 +341,7 @@ from random import randint as ri
 from time import sleep as sl
 
 try:
-    import pyautogui
+    if pynp == True:import pyautogui
 except ModuleNotFoundError:
     print('pip install pyautogui')
     exit()
@@ -1286,6 +1285,29 @@ def AutoCS():
     except KeyboardInterrupt:
         print('ForceStop')
 #################TermPy_conf#################
+## Tens 0.1
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from keras.models import Sequential
+from keras.layers import Dense
+import tensorflow as tf
+
+def adaptive_predictor(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
+   if outp == None:outp = input_data.shape[1]
+   input_shape = features.shape[1:]
+   model = Sequential()
+   model.add(Dense(l1, activation='relu', input_shape=input_shape))  # Adapt input layer
+   model.add(Dense(l2, activation='relu'))
+   model.add(Dense(outp, activation='linear'))
+   model.compile(optimizer="adam", loss='mse', metrics=['accuracy'])
+   model.fit(features, labels, epochs=eps, validation_split=0.0005,
+             callbacks=[tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=50)])
+   modele = LinearRegression()
+   modele.fit(features, labels)
+   prediction = model.predict(input_data)
+   fprediction = modele.predict(prediction.reshape(-1, 1))[0]
+   return fprediction
+# ex -> features = np.array([[1], [2], [3], [4], [5]]);labels = np.array([1, 2, 3, 4, 5]);input_data = np.array([6]).reshape(-1, 1);predicted_value = adaptive_predictor(features, labels, input_data);print("Predicted:", predicted_value)
 ## memory editor 1.3
 import pymem
 def wr1(proc,addre,val,type,l=4):
@@ -1403,22 +1425,57 @@ def TermPyS():
 ##############################################
 # GUI
 fini = 0
-import tkinter as tk
 import random
-
-root = tk.Tk()
-root.wm_attributes("-topmost",True)
-root.wm_attributes("-transparentcolor","white")
-root.overrideredirect(1)
-root.geometry("+0+0")
-
-
-def rword():
+try:
+  import tkinter as tk
+  root = tk.Tk()
+  root.wm_attributes("-topmost",True)
+  root.wm_attributes("-transparentcolor","white")
+  root.overrideredirect(1)
+  root.geometry("+0+0")
+  def rword():
     return ''.join(random.choice(string.ascii_letters) for i in range(7))
+  root.title(rword())
+  #
+  def AutoC():
+      root.destroy()
+      AutoCS()
 
 
-root.title(rword())
+  def AutoCPlus():
+      root.destroy()
+      global fini
+      fini = 12
+      AutoCS()
 
+
+  def TermPy():
+      root.destroy()
+      TermPyS()
+
+
+  def Exit():
+      root.destroy()
+      exit()
+
+#
+  AutoC = tk.Button(root, text="AutoC", command=AutoC)
+  AutoC.pack()
+  AutoCPlus = tk.Button(root, text="AutoCPlus", command=AutoCPlus)
+  AutoCPlus.pack()
+  TermPy = tk.Button(root, text="TermPy", command=TermPy)
+  TermPy.pack()
+  Exit = tk.Button(root, text="Exit", command=Exit)
+  Exit.pack()
+  root.mainloop()
+except:
+  while True:
+    vard=int(input(color("FCLI =>\n[1] AutoCPlus\n[2] TermPy\n[3] AutoCS\n[0] Exit\n", random.randint(1,3))))
+    if vard == 1:color("Soon", 3)
+    elif vard == 2:TermPyS()
+    elif vard == 3:color("Soon", 3)
+    elif vard == 0:exit()
+    else:color("BadINP", 3)
 
 #
 def AutoC():
@@ -1441,14 +1498,3 @@ def TermPy():
 def Exit():
     root.destroy()
     exit()
-
-#
-AutoC = tk.Button(root, text="AutoC", command=AutoC)
-AutoC.pack()
-AutoCPlus = tk.Button(root, text="AutoCPlus", command=AutoCPlus)
-AutoCPlus.pack()
-TermPy = tk.Button(root, text="TermPy", command=TermPy)
-TermPy.pack()
-Exit = tk.Button(root, text="Exit", command=Exit)
-Exit.pack()
-root.mainloop()

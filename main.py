@@ -230,7 +230,7 @@ try:
 
 
             process_mgr = ["ProcessHacker.exe", "TaskMgr.exe", "procexp.exe", "procexp64.exe", "procexp64a.exe"]
-            HCD = input('AntiCheatPROC:')
+            HCD = input('APROC:')
             process_mgr.append(HCD)
 
 
@@ -1334,6 +1334,21 @@ def inject_process(dll,inj):
                 kernel32.CreateRemoteThread.restype = ctypes.c_void_p
                 kernel32.CreateRemoteThread(process_handle, None, 0, ctypes.cast(allocated_memory, ctypes.c_void_p),
                                             None, 0, None)
+def patch_memory(address, value):
+                PROCESS_VM_OPERATION = 0x0008
+                PROCESS_VM_READ = 0x0010
+                PROCESS_VM_WRITE = 0x0020
+                PAGE_READWRITE = 0x04
+                h_process = ctypes.windll.kernel32.OpenProcess(
+                    PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, 0, int(address.split("-")[0]))
+                if h_process:
+                    old_protection = ctypes.c_long(0)
+                    ctypes.windll.kernel32.VirtualProtectEx(h_process, int(address, 16), len(value), PAGE_READWRITE,
+                                                            ctypes.byref(old_protection))
+                    ctypes.windll.kernel32.WriteProcessMemory(h_process, int(address, 16), value, len(value), None)
+                    ctypes.windll.kernel32.VirtualProtectEx(h_process, int(address, 16), len(value), old_protection,
+                                                            ctypes.byref(old_protection))
+                    ctypes.windll.kernel32.CloseHandle(h_process)
 
 ## memory editor 1.3
 import pymem

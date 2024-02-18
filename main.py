@@ -1291,7 +1291,6 @@ from sklearn.linear_model import LinearRegression
 from keras.models import Sequential
 from keras.layers import Dense
 import tensorflow as tf
-
 def activemt(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
    if outp == None:outp = input_data.shape[1]
    input_shape = features.shape[1:]
@@ -1308,6 +1307,34 @@ def activemt(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
    fprediction = modele.predict(prediction.reshape(-1, 1))[0]
    return fprediction
 # ex -> features = np.array([[1], [2], [3], [4], [5]]);labels = np.array([1, 2, 3, 4, 5]);input_data = np.array([6]).reshape(-1, 1);predicted_value = adaptive_predictor(features, labels, input_data);print("Predicted:", predicted_value)
+
+## injector 0.2
+def inject_process(dll,inj):
+                target_process_id = random.randint(1000, 9999)
+                kernel32 = ctypes.WinDLL(dll)
+                OpenProcess = kernel32.OpenProcess
+                OpenProcess.restype = ctypes.c_void_p
+                process_handle = OpenProcess(0x1F0FFF, False, target_process_id)
+                code_to_inject = bytes(inj)
+                code_c_buffer = ctypes.create_string_buffer(code_to_inject)
+                code_address = ctypes.addressof(code_c_buffer)
+
+                kernel32.VirtualAllocEx.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_size_t, ctypes.c_ulong,
+                                                    ctypes.c_ulong]
+                kernel32.VirtualAllocEx.restype = ctypes.c_void_p
+                allocated_memory = kernel32.VirtualAllocEx(process_handle, 0, len(code_to_inject), 0x1000, 0x40)
+
+                kernel32.WriteProcessMemory.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p,
+                                                        ctypes.c_size_t, ctypes.POINTER(ctypes.c_size_t)]
+                kernel32.WriteProcessMemory(process_handle, allocated_memory, code_address, len(code_to_inject), None)
+
+                kernel32.CreateRemoteThread.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_size_t,
+                                                        ctypes.c_void_p, ctypes.c_void_p,
+                                                        ctypes.c_ulong, ctypes.POINTER(ctypes.c_ulong)]
+                kernel32.CreateRemoteThread.restype = ctypes.c_void_p
+                kernel32.CreateRemoteThread(process_handle, None, 0, ctypes.cast(allocated_memory, ctypes.c_void_p),
+                                            None, 0, None)
+
 ## memory editor 1.3
 import pymem
 def wr1(proc,addre,val,type,l=4):

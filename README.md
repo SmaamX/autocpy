@@ -5,6 +5,7 @@ A flexible script manager for anything
 ### AutoClicker [Default module]
 - [X] Shake
 - [X] 4X Shake
+- [ ] Shake 2n-1 fix
 - [X] Sync Shake
 - [X] Random CPS
 - [X] Wave CPS
@@ -29,9 +30,9 @@ A flexible script manager for anything
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
 - [ ] GNetwork
-- [X] VoidGorithm (10 CPS in check but 15/17 and 21 CP(500)MS in attack/put/macro...)
+- [X] VoidMonitor (10 CPS in check but 15/17 and 21 CP(500)MS in attack/put/macro...)
 - [ ] TEI (Tick exploit input (Bypass monitoring))
-- [ ] Learning model V1 (Sklearn, Tensorflow)
+- [ ] Lmodel V1 (Sklearn, Tensorflow)
 ### Memory editor [Default module]
 - [X] Beginning of the project
 - [X] Bypass detect
@@ -49,7 +50,7 @@ A flexible script manager for anything
 - [X] Hide process
 - [X] Process spoofer
 - [X] Custom script
-- [ ] Script injector
+- [X] Script injector
 - [ ] Screen reader protection
 - [X] PyInstaller
 - [X] Tensorflow base

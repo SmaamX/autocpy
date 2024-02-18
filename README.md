@@ -57,6 +57,8 @@ A flexible script manager for anything
 
 ## Main objective
 + Fireless algorithms [Global]
++ Undetectable proc
++ Multi-platform
 - [ ] Final version
 
 # Pay attention

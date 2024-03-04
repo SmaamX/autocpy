@@ -1,10 +1,11 @@
 from os import system as sys
 from sys import argv
+import sklearn.utils._cython_blas
+import sklearn.tree
+import sklearn.tree._utils
 import os
 import random
 import string
-try:import pynput
-except:pynp=False
 try:
     if __name__ == '__main__':
         import os
@@ -334,14 +335,14 @@ def color(x, C):
     if C == 3: print('\u001b[34m' + x)
 
 #Bruh
-color('PyKernel32 - Beta/CLI',random.randint(1,3))
+color('CheatBox - Beta/CLI',random.randint(1,3))
 
 
 from random import randint as ri
 from time import sleep as sl
 
 try:
-    if pynp == True:import pyautogui
+    import pyautogui
 except ModuleNotFoundError:
     print('pip install pyautogui')
     exit()
@@ -636,7 +637,29 @@ def ACC(RL):
             pyautogui.mouseUp(button='left')
         movex(4)
 
-
+mod_s = None
+mod_sd = None
+h1 = 0
+h2 = 0
+hs2 = 0
+hs1 = 0
+rad = 0
+res = 10
+resd = 10
+from sklearn.linear_model import LinearRegression
+import numpy as np
+features = [[20],[30]]
+labels = [1,2]
+featuresd = [[20],[30]]
+labelsd = [1,2]
+featu = np.array([[20],[30]])
+labe = np.array([1,2])
+featud = np.array([[20],[30]])
+labed = np.array([1,2])
+mod_s = LinearRegression()
+mod_s.fit(featu, labe)
+mod_sd = LinearRegression()
+mod_sd.fit(featud, labed)
 def AutoCS():
     global LBM
     global h1
@@ -769,19 +792,30 @@ def AutoCS():
         return r
 
     try:
-        h1 = 0
-        h2 = 0
-
         def start():
             global leftCL
             global h1
+            global hs1
+            global mod_s
+            global features
+            global labels
             global LBM
             global st
+            global res
             cooldown(40, 50)
-            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, 3, 10, 22, 23, 6, 16, 19, 20, 10, 11, 24, 25,
+            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, res+5, res+11, res, res+5, 6, 16, 19, 20, 10, 11, 24, 25,
                       h2)
                                                                                                                                        #                                                                     #
+            hs1 = h1
             h1 = p
+            res = round(float(mod_s.predict(np.array([[h1]]))))
+            print(res)
+            labels.append(hs1)
+            features.append([h1])
+            if ri(1,10)==1:
+                featuresd = np.array(features)
+                labelsd = np.array(labels)
+                mod_s.fit(featuresd, labelsd)
             p = p * 10 ** -3
             if LBM == True:
                 st1 = std(0, 1, 70)
@@ -802,15 +836,28 @@ def AutoCS():
 
         #
         def start2():
-            global rightCL
+            global leftCL
             global h2
+            global hs2
+            global mod_sd
+            global featuresd
+            global labelsd
             global LBM
             global st
+            global resd
             cooldown(40, 50)
-            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, 3, 12, 25, 26, 7, 21, 22, 24, 12, 24, 25, 26,
+            p = randx(2, 5, 6, 8, 1, 2, 3, 4, 2, 3, 4, 5, 12, 31, 32, 191, resd+5, resd+11, resd, resd+5, 7, 21, 22, 24, 12, 24, 25, 26,
                       h2)
-            #                    #
+            hs2 = h2
             h2 = p
+            resd = round(float(mod_sd.predict(np.array([[h2]]))))
+            print(resd)
+            labelsd.append(hs2)
+            featuresd.append([h2])
+            if ri(1, 10) == 1:
+                features1 = np.array(featuresd)
+                labels1 = np.array(labelsd)
+                mod_s.fit(features1, labels1)
             p = p * 10 ** -3
             if LBM == True:
                 st = std(0, 1, 50)
@@ -1182,22 +1229,22 @@ def AutoCS():
                 sls()
                 aq = True
                 # = empty
-                if ChlpsX[1] != '=': 
+                if ChlpsX[1] != '=':
                     KeyRun(ChlpsX[1]);sls()
                     try:sl(float(ChlpsXC[1]))
                     except:pass
                     dq = True
-                if ChlpsX[2] != '=': 
+                if ChlpsX[2] != '=':
                     KeyRun(ChlpsX[2]);sls()
                     try:sl(float(ChlpsXC[2]))
                     except:pass
                     cq = True
-                if ChlpsX[3] != '=': 
+                if ChlpsX[3] != '=':
                     KeyRun(ChlpsX[3]);sls()
                     try:sl(float(ChlpsXC[3]))
                     except:pass
                     fq = True
-                if ChlpsX[4] != '=': 
+                if ChlpsX[4] != '=':
                     KeyRun(ChlpsX[4]);sls()
                     try:sl(float(ChlpsXC[4]))
                     except:pass
@@ -1286,28 +1333,16 @@ def AutoCS():
         print('ForceStop')
 #################TermPy_conf#################
 ## Tens 0.1
-import numpy as np
 from sklearn.linear_model import LinearRegression
-from keras.models import Sequential
-from keras.layers import Dense
-import tensorflow as tf
-def activemt(features, labels, input_data, outp=None, eps=70, l1=32, l2=24):
-   if outp == None:outp = input_data.shape[1]
-   input_shape = features.shape[1:]
-   model = Sequential()
-   model.add(Dense(l1, activation='relu', input_shape=input_shape))  # Adapt input layer
-   model.add(Dense(l2, activation='relu'))
-   model.add(Dense(outp, activation='linear'))
-   model.compile(optimizer="adam", loss='mse', metrics=['accuracy'])
-   model.fit(features, labels, epochs=eps, validation_split=0.0005,
-             callbacks=[tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=50)])
-   modele = LinearRegression()
-   modele.fit(features, labels)
-   prediction = model.predict(input_data)
-   fprediction = modele.predict(prediction.reshape(-1, 1))[0]
-   return fprediction
-# ex -> features = np.array([[1], [2], [3], [4], [5]]);labels = np.array([1, 2, 3, 4, 5]);input_data = np.array([6]).reshape(-1, 1);predicted_value = adaptive_predictor(features, labels, input_data);print("Predicted:", predicted_value)
-
+import numpy as np
+def activemt(features, labels, input_data):
+  features = np.array(features)
+  labels = np.array(labels)
+  mod = LinearRegression()
+  mod.fit(features, labels)
+  inp = np.array([input_data])
+  pro = mod.predict([inp])
+  return pro
 ## injector 0.2
 def inject_process(dll,inj):
                 target_process_id = random.randint(1000, 9999)

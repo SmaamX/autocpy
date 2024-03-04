@@ -9,7 +9,7 @@ A flexible script manager for anything
 - [X] Sync Shake
 - [X] Random CPS
 - [X] Wave CPS
-- [ ] Sync wave
+- [X] Sync wave
 - [X] Right click
 - [X] Press and wait
 - [ ] Sync PAW
@@ -54,7 +54,7 @@ A flexible script manager for anything
 - [ ] Debug-side (just CLI)
 - [ ] HID attack (Android nethunter, etc.)
 - [X] PyInstaller
-- [X] Tensorflow base
+- [X] Sklearn base
 
 ## Main objective
 + Fireless algorithms [Global]

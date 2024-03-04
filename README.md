@@ -32,6 +32,7 @@ A flexible script manager for anything
 - [X] VoidMonitor (10 CPS in check but 15/17 and 21 CP(500)MS in attack/put/macro...)
 - [ ] TEI (Tick exploit input (Bypass monitoring))
 - [X] Lmodel V1 (Sklearn)
+- [ ] Kmodel V1 (Sklearn, Qwerty Keyboard)
 ### Memory editor [Default module]
 - [X] Beginning of the project
 - [X] Bypass detect

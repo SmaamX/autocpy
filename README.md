@@ -45,7 +45,7 @@ A flexible script manager for anything
 - [X] GUI
 - [ ] Full GUI
 - [ ] Module manager
-- [X] Lite version
+- [ ] SuperLite version
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer

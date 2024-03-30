@@ -17,14 +17,6 @@ A flexible script manager for anything
 - [X] Keyboard custom delay
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
 - [X] Button support (One)
-### AutoAim (OpenCV) [Default module]
-- [ ] Beginning of the project
-- [ ] Import sample images
-- [ ] Import multi sample images
-- [ ] Random aim speed / wave
-- [ ] Random aim shake / speed / wave
-- [ ] Sync shake / speed / wave
-- [ ] Random LockBox
 ### Algorithm
 - [X] AlgorithmX²
 - [ ] AlgorithmX³
@@ -39,13 +31,9 @@ A flexible script manager for anything
 - [X] Isolated process
 - [X] Injector
 - [X] Memory editor
-- [ ] Sandbox
-
 ## Main
 - [X] GUI
 - [ ] Full GUI
-- [ ] Module manager
-- [ ] SuperLite version
 - [X] CLI
 - [X] Hide process
 - [X] Process spoofer

@@ -5,24 +5,21 @@ A flexible script manager for anything
 ### AutoClicker [Default module]
 - [X] Shake
 - [X] 4X Shake
-- [ ] Shake 2n-1 fix
+- [X] Shake 2n-1 fix
 - [X] Sync Shake
 - [X] Random CPS
 - [X] Wave CPS
 - [X] Sync wave
 - [X] Right click
 - [X] Press and wait
-- [ ] Sync PAW
+- [X] Sync PAW
 - [X] Keyboard support
 - [X] Keyboard custom delay
 -    A different delay of keyboard if not set for all keys, can most likely cause detection
 - [X] Button support (One)
 ### Algorithm
 - [X] AlgorithmX²
-- [ ] AlgorithmX³
-- [ ] GNetwork
-- [X] VoidMonitor (10 CPS in check but 15/17 and 21 CP(500)MS in attack/put/macro...)
-- [ ] TEI (Tick exploit input (Bypass monitoring))
+- [X] GNetwork
 - [X] Lmodel V1 (Sklearn)
 - [ ] Kmodel V1 (Sklearn, Qwerty Keyboard)
 ### Memory editor [Default module]
@@ -33,8 +30,6 @@ A flexible script manager for anything
 - [X] Memory editor
 ## Main
 - [X] GUI
-- [ ] Full GUI
-- [X] CLI
 - [X] Hide process
 - [X] Process spoofer
 - [X] Custom script
@@ -49,7 +44,7 @@ A flexible script manager for anything
 + Fireless algorithms [Global]
 + Undetectable proc
 + Multi-platform
-- [ ] Final version
+- [X] Final version
 
 # Pay attention
 It's not completely immune to brutal anti-cheat and modifications detectors!

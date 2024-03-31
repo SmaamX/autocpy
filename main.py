@@ -320,7 +320,6 @@ try:
 except:
     print('un_spoof')
 
-
 def cleanC(a):
     try:
         while True: a.remove(',')
@@ -475,12 +474,25 @@ def PACCXY(YS):
 #
 TLPS = 0
 DSS = 0
+from sklearn.linear_model import LinearRegression
+import numpy as np
+featud = np.array([[1],[11],[10],[9]])
+labed = np.array([1,2,3,4])
+mod_sv = LinearRegression()
+mod_sv.fit(featud, labed)
 def ACC(RL):
     global st
     global TLPS
     global DSS
+    global featud
+    global labed
+    global mod_sv
     stf()
+    X=0
+    Y=0
     def movex(Rang):
+        global X
+        global  Y
         X = PACCXY(70)
         Y = PACCXY(70)
         T = PACCS(60)
@@ -491,7 +503,9 @@ def ACC(RL):
             for x in range(1, CrashS):
                 pyautogui.move(X, Y, T)
     TLP = ri(1, 3) + TLPS ** 2 - ri(1, 2)
-    DS = ri(1, 12) + TLPS ** 2 - ri(1, 2)
+    DS = round(float(mod_sv.predict(np.array([[ri(X-1,X)]]))))
+    if DS <= 12 and DS >= 1:pass
+    else:DS = ri(1, 12) + TLPS ** 2 - ri(1, 2)
     if DS == 1:
         if RL == 'R':
             pyautogui.mouseDown(button='right')
@@ -784,7 +798,7 @@ def AutoCS():
         if d == 1:
             r1 = ri(x, y)
             ri2 = ri(z, a)
-            r = ri(r1, ri2)
+            r = ri(ri2, r1+ri2)
         else:
             r1 = ri(z, a)
             ri2 = ri(x, y)
